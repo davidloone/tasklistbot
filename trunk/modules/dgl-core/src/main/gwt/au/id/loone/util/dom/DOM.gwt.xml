@@ -1,0 +1,15 @@
+<module>
+
+  <inherits name="au.id.loone.util.Util"/>
+  <inherits name="au.id.loone.util.reflists.RefLists"/>
+  <inherits name="au.id.loone.util.tracing.Tracing"/>
+  <inherits name="com.google.gwt.user.User"/>
+  <inherits name="com.googlecode.gwtx.Java"/>
+  <inherits name="com.googlecode.gwtx.Javax"/>
+
+  <source path="">
+    <include name="Duration.java"/>
+    <include name="TimeOfDay.java"/>
+  </source>
+
+</module>

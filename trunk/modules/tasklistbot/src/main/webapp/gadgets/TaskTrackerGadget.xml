@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs height="20" title="TaskTrackerGadget" width="52">
+    <Require feature="wave"/>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+    <script type="text/javascript">
+      function clicked() {
+        var delta = new Object();
+        delta.progress = document.getElementById('taskListCheckbox').checked ? 100 : 0;
+        wave.getState().submitDelta(delta);
+      }
+
+      function stateUpdated() {
+        if (!wave.getState()) {
+          return;
+        }
+
+        var progress = wave.getState().get('progress');
+        document.getElementById('taskListCheckbox').checked = (wave.getState().get('progress') == '100');
+        document.getElementById('taskListCheckbox').disabled = (wave.getState().get('readonly') == 'true');
+        document.getElementById('taskListCheckbox').title = 'complete: ' + wave.getState().get('progress') + '%';
+      }
+
+      function init() {
+        if (wave && wave.isInWaveContainer()) {
+          wave.setStateCallback(stateUpdated);
+        }
+      }
+      gadgets.util.registerOnLoadHandler(init);
+    </script>
+    <input id="taskListCheckbox" onclick="clicked();" type="checkbox" />
+]]></Content>
+</Module>

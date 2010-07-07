@@ -1,0 +1,17 @@
+<module>
+
+  <inherits name="au.id.loone.util.Util"/>
+  <inherits name="au.id.loone.util.tracing.Tracing"/>
+  <inherits name="com.google.gwt.user.User"/>
+
+  <source path="">
+    <include name="BaseRefItem.java"/>
+    <include name="ExternalRefItem.java"/>
+    <include name="RefItem.java"/>
+    <include name="RefList.java"/>
+    <include name="RefList_CustomFieldSerializer.java"/>
+    <include name="StaticRefItem.java"/>
+  </source>
+  <source path="client"/>
+
+</module>

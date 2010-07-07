@@ -1,0 +1,2423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2009, David G Loone
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<rl:refList
+    description="Countries."
+    name="au.id.loone.util.reflists.Country"
+    version="1"
+    xmlns="http://loone.id.au/xml/refList_v1.xsd"
+    xmlns:rl="http://loone.id.au/xml/refList_v1.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  >
+
+  <rl:implementation>
+    <rl:java class="au.id.loone.util.reflists.CountryRI"/>
+  </rl:implementation>
+
+  <rl:propertyDefs>
+    <rl:propertyDef name="alpha2Code" type="java.lang.String"/>
+    <rl:propertyDef name="alpha3Code" type="java.lang.String"/>
+    <rl:propertyDef indexed="true" name="notes" type="java.lang.String"/>
+    <rl:propertyDef name="numericCode" type="java.lang.String"/>
+    <rl:propertyDef name="since" type="java.lang.String"/>
+  </rl:propertyDefs>
+
+  <rl:item code="AD" description="Andorra">
+    <rl:alias value="AND"/>
+    <rl:alias value="020"/>
+    <rl:property name="alpha2Code" value="AD"/>
+    <rl:property name="alpha3Code" value="AND"/>
+    <rl:property name="numericCode" value="020"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AE" description="United Arab Emirates">
+    <rl:alias value="ARE"/>
+    <rl:alias value="784"/>
+    <rl:property name="alpha2Code" value="AE"/>
+    <rl:property name="alpha3Code" value="ARE"/>
+    <rl:property name="numericCode" value="84"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AF" description="Afghanistan">
+    <rl:alias value="AFG"/>
+    <rl:alias value="004"/>
+    <rl:property name="alpha2Code" value="AF"/>
+    <rl:property name="alpha3Code" value="AFG"/>
+    <rl:property name="numericCode" value="004"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AG" description="Antigua and Barbuda">
+    <rl:alias value="ATG"/>
+    <rl:alias value="028"/>
+    <rl:property name="alpha2Code" value="AG"/>
+    <rl:property name="alpha3Code" value="AT"/>
+    <rl:property name="numericCode" value="02"/>
+    <rl:property name="since" value="197"/>
+  </rl:item>
+
+  <rl:item code="AI" description="Anguilla">
+    <rl:alias value="AIA"/>
+    <rl:alias value="660"/>
+    <rl:property name="alpha2Code" value="A"/>
+    <rl:property name="alpha3Code" value="AI"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>AI previously represented French Afar and Issas</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="66"/>
+    <rl:property name="since" value="198"/>
+  </rl:item>
+
+  <rl:item code="AL" description="Albania">
+    <rl:alias value="ALB"/>
+    <rl:alias value="008"/>
+    <rl:property name="alpha2Code" value="AL"/>
+    <rl:property name="alpha3Code" value="ALB"/>
+    <rl:property name="numericCode" value="008"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AM" description="Armenia">
+    <rl:alias value="ARM"/>
+    <rl:alias value="051"/>
+    <rl:property name="alpha2Code" value="AM"/>
+    <rl:property name="alpha3Code" value="ARM"/>
+    <rl:property name="numericCode" value="051"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="AN" description="Netherlands Antilles">
+    <rl:alias value="ANT"/>
+    <rl:alias value="530"/>
+    <rl:property name="alpha2Code" value="A"/>
+    <rl:property name="alpha3Code" value="ANT"/>
+    <rl:property name="numericCode" value="530"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AO" description="Angola">
+    <rl:alias value="AGO"/>
+    <rl:alias value="024"/>
+    <rl:property name="alpha2Code" value="AO"/>
+    <rl:property name="alpha3Code" value="AGO"/>
+    <rl:property name="numericCode" value="024"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AQ" description="Antarctica">
+    <rl:alias value="ATA"/>
+    <rl:alias value="010"/>
+    <rl:property name="alpha2Code" value="AQ"/>
+    <rl:property name="alpha3Code" value="ATA"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Covers the territories south of 60° south latitude.</rl:propertyValue>
+      <rl:propertyValue>Code taken from name in French: Antarctique</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="010"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AR" description="Argentina">
+    <rl:alias value="ARG"/>
+    <rl:alias value="032"/>
+    <rl:property name="alpha2Code" value="AR"/>
+    <rl:property name="alpha3Code" value="ARG"/>
+    <rl:property name="numericCode" value="032"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AS" description="American Samoa">
+    <rl:alias value="ASM"/>
+    <rl:alias value="016"/>
+    <rl:property name="alpha2Code" value="AS"/>
+    <rl:property name="alpha3Code" value="ASM"/>
+    <rl:property name="numericCode" value="016"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AT" description="Austria">
+    <rl:alias value="AUT"/>
+    <rl:alias value="040"/>
+    <rl:property name="alpha2Code" value="AT"/>
+    <rl:property name="alpha3Code" value="AUT"/>
+    <rl:property name="numericCode" value="040"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AU" description="Australia">
+    <rl:alias value="AUS"/>
+    <rl:alias value="036"/>
+    <rl:property name="alpha2Code" value="AU"/>
+    <rl:property name="alpha3Code" value="AUS"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Includes the Ashmore and Cartier Islands and the Coral Sea Islands</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="036"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="AW" description="Aruba">
+    <rl:alias value="ABW"/>
+    <rl:alias value="533"/>
+    <rl:property name="alpha2Code" value="AW"/>
+    <rl:property name="alpha3Code" value="ABW"/>
+    <rl:property name="numericCode" value="533"/>
+    <rl:property name="since" value="1986"/>
+  </rl:item>
+
+  <rl:item code="AX" description="Åland Islands">
+    <rl:alias value="ALA"/>
+    <rl:alias value="248"/>
+    <rl:property name="alpha2Code" value="AX"/>
+    <rl:property name="alpha3Code" value="ALA"/>
+    <rl:property name="numericCode" value="248"/>
+    <rl:property name="since" value="2004"/>
+  </rl:item>
+
+  <rl:item code="AZ" description="Azerbaijan">
+    <rl:alias value="AZE"/>
+    <rl:alias value="031"/>
+    <rl:property name="alpha2Code" value="AZ"/>
+    <rl:property name="alpha3Code" value="AZE"/>
+    <rl:property name="numericCode" value="031"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="BA" description="Bosnia and Herzegovina">
+    <rl:alias value="BIH"/>
+    <rl:alias value="070"/>
+    <rl:property name="alpha2Code" value="BA"/>
+    <rl:property name="alpha3Code" value="BIH"/>
+    <rl:property name="numericCode" value="070"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="BB" description="Barbados">
+    <rl:alias value="BRB"/>
+    <rl:alias value="052"/>
+    <rl:property name="alpha2Code" value="BB"/>
+    <rl:property name="alpha3Code" value="BRB"/>
+    <rl:property name="numericCode" value="052"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BD" description="Bangladesh">
+    <rl:alias value="BGD"/>
+    <rl:alias value="050"/>
+    <rl:property name="alpha2Code" value="BD"/>
+    <rl:property name="alpha3Code" value="BGD"/>
+    <rl:property name="numericCode" value="050"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BE" description="Belgium">
+    <rl:alias value="BEL"/>
+    <rl:alias value="056"/>
+    <rl:property name="alpha2Code" value="BE"/>
+    <rl:property name="alpha3Code" value="BEL"/>
+    <rl:property name="numericCode" value="056"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BF" description="Burkina Faso">
+    <rl:alias value="BFA"/>
+    <rl:alias value="854"/>
+    <rl:property name="alpha2Code" value="BF"/>
+    <rl:property name="alpha3Code" value="BFA"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from Upper Volta (HV)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="854"/>
+    <rl:property name="since" value="1984"/>
+  </rl:item>
+
+  <rl:item code="BG" description="Bulgaria">
+    <rl:alias value="BGR"/>
+    <rl:alias value="100"/>
+    <rl:property name="alpha2Code" value="BG"/>
+    <rl:property name="alpha3Code" value="BGR"/>
+    <rl:property name="numericCode" value="100"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BH" description="Bahrain">
+    <rl:alias value="BHR"/>
+    <rl:alias value="048"/>
+    <rl:property name="alpha2Code" value="BH"/>
+    <rl:property name="alpha3Code" value="BHR"/>
+    <rl:property name="numericCode" value="048"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BI" description="Burundi">
+    <rl:alias value="BDI"/>
+    <rl:alias value="108"/>
+    <rl:property name="alpha2Code" value="BI"/>
+    <rl:property name="alpha3Code" value="BDI"/>
+    <rl:property name="numericCode" value="108"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BJ" description="Benin">
+    <rl:alias value="BEN"/>
+    <rl:alias value="204"/>
+    <rl:property name="alpha2Code" value="BJ"/>
+    <rl:property name="alpha3Code" value="BEN"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from Dahomey (DY)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="204"/>
+    <rl:property name="since" value="1977"/>
+  </rl:item>
+
+  <rl:item code="BL" description="Saint Barthélemy">
+    <rl:alias value="BLM"/>
+    <rl:alias value="652"/>
+    <rl:property name="alpha2Code" value="BL"/>
+    <rl:property name="alpha3Code" value="BLM"/>
+    <rl:property name="numericCode" value="652"/>
+    <rl:property name="since" value="2007"/>
+  </rl:item>
+
+  <rl:item code="BM" description="Bermuda">
+    <rl:alias value="BMU"/>
+    <rl:alias value="060"/>
+    <rl:property name="alpha2Code" value="BM"/>
+    <rl:property name="alpha3Code" value="BMU"/>
+    <rl:property name="numericCode" value="060"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BN" description="Brunei Darussalam">
+    <rl:alias value="BRN"/>
+    <rl:alias value="096"/>
+    <rl:property name="alpha2Code" value="BN"/>
+    <rl:property name="alpha3Code" value="BRN"/>
+    <rl:property name="numericCode" value="096"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BO" description="Bolivia, Plurinational State of">
+    <rl:alias value="BOL"/>
+    <rl:alias value="068"/>
+    <rl:property name="alpha2Code" value="BO"/>
+    <rl:property name="alpha3Code" value="BOL"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Bolivia</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="068"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BR" description="Brazil">
+    <rl:alias value="BRA"/>
+    <rl:alias value="076"/>
+    <rl:property name="alpha2Code" value="BR"/>
+    <rl:property name="alpha3Code" value="BRA"/>
+    <rl:property name="numericCode" value="076"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BS" description="Bahamas">
+    <rl:alias value="BHS"/>
+    <rl:alias value="044"/>
+    <rl:property name="alpha2Code" value="BS"/>
+    <rl:property name="alpha3Code" value="BHS"/>
+    <rl:property name="numericCode" value="044"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BT" description="Bhutan">
+    <rl:alias value="BTN"/>
+    <rl:alias value="064"/>
+    <rl:property name="alpha2Code" value="BT"/>
+    <rl:property name="alpha3Code" value="BTN"/>
+    <rl:property name="numericCode" value="064"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BV" description="Bouvet Island">
+    <rl:alias value="BVT"/>
+    <rl:alias value="074"/>
+    <rl:property name="alpha2Code" value="BV"/>
+    <rl:property name="alpha3Code" value="BVT"/>
+    <rl:property name="numericCode" value="074"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BW" description="Botswana">
+    <rl:alias value="BWA"/>
+    <rl:alias value="072"/>
+    <rl:property name="alpha2Code" value="BW"/>
+    <rl:property name="alpha3Code" value="BWA"/>
+    <rl:property name="numericCode" value="072"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BY" description="Belarus">
+    <rl:alias value="BLR"/>
+    <rl:alias value="112"/>
+    <rl:property name="alpha2Code" value="BY"/>
+    <rl:property name="alpha3Code" value="BLR"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from previous country name used by ISO: Byelorussian SSR</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="112"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="BZ" description="Belize">
+    <rl:alias value="BLZ"/>
+    <rl:alias value="084"/>
+    <rl:property name="alpha2Code" value="BZ"/>
+    <rl:property name="alpha3Code" value="BLZ"/>
+    <rl:property name="numericCode" value="084"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CA" description="Canada">
+    <rl:alias value="CAN"/>
+    <rl:alias value="124"/>
+    <rl:property name="alpha2Code" value="CA"/>
+    <rl:property name="alpha3Code" value="CAN"/>
+    <rl:property name="numericCode" value="124"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CC" description="Cocos (Keeling) Islands">
+    <rl:alias value="CCK"/>
+    <rl:alias value="166"/>
+    <rl:property name="alpha2Code" value="CC"/>
+    <rl:property name="alpha3Code" value="CCK"/>
+    <rl:property name="numericCode" value="166"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CD" description="Congo, the Democratic Republic of the">
+    <rl:alias value="COD"/>
+    <rl:alias value="180"/>
+    <rl:property name="alpha2Code" value="CD"/>
+    <rl:property name="alpha3Code" value="COD"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from Zaire (ZR)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="180"/>
+    <rl:property name="since" value="1997"/>
+  </rl:item>
+
+  <rl:item code="CF" description="Central African Republic">
+    <rl:alias value="CAF"/>
+    <rl:alias value="140"/>
+    <rl:property name="alpha2Code" value="CF"/>
+    <rl:property name="alpha3Code" value="CAF"/>
+    <rl:property name="numericCode" value="140"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CG" description="Congo">
+    <rl:alias value="COG"/>
+    <rl:alias value="178"/>
+    <rl:property name="alpha2Code" value="CG"/>
+    <rl:property name="alpha3Code" value="COG"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>i.e., Congo, the Republic of the</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="178"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CH" description="Switzerland">
+    <rl:alias value="CHE"/>
+    <rl:alias value="756"/>
+    <rl:property name="alpha2Code" value="CH"/>
+    <rl:property name="alpha3Code" value="CHE"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Latin: Confoederatio Helvetica</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="756"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CI" description="Côte d'Ivoire">
+    <rl:alias value="CIV"/>
+    <rl:alias value="384"/>
+    <rl:property name="alpha2Code" value="CI"/>
+    <rl:property name="alpha3Code" value="CIV"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>i.e., Ivory Coast</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="384"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CK" description="Cook Islands">
+    <rl:alias value="COK"/>
+    <rl:alias value="184"/>
+    <rl:property name="alpha2Code" value="CK"/>
+    <rl:property name="alpha3Code" value="COK"/>
+    <rl:property name="numericCode" value="184"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CL" description="Chile">
+    <rl:alias value="CHL"/>
+    <rl:alias value="152"/>
+    <rl:property name="alpha2Code" value="CL"/>
+    <rl:property name="alpha3Code" value="CHL"/>
+    <rl:property name="numericCode" value="152"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CM" description="Cameroon">
+    <rl:alias value="CMR"/>
+    <rl:alias value="120"/>
+    <rl:property name="alpha2Code" value="CM"/>
+    <rl:property name="alpha3Code" value="CMR"/>
+    <rl:property name="numericCode" value="120"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CN" description="China">
+    <rl:alias value="CHN"/>
+    <rl:alias value="156"/>
+    <rl:property name="alpha2Code" value="CN"/>
+    <rl:property name="alpha3Code" value="CHN"/>
+    <rl:property name="numericCode" value="156"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CO" description="Colombia">
+    <rl:alias value="COL"/>
+    <rl:alias value="170"/>
+    <rl:property name="alpha2Code" value="CO"/>
+    <rl:property name="alpha3Code" value="COL"/>
+    <rl:property name="numericCode" value="170"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CR" description="Costa Rica">
+    <rl:alias value="CRI"/>
+    <rl:alias value="188"/>
+    <rl:property name="alpha2Code" value="CR"/>
+    <rl:property name="alpha3Code" value="CRI"/>
+    <rl:property name="numericCode" value="188"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CU" description="Cuba">
+    <rl:alias value="CUB"/>
+    <rl:alias value="192"/>
+    <rl:property name="alpha2Code" value="CU"/>
+    <rl:property name="alpha3Code" value="CUB"/>
+    <rl:property name="numericCode" value="192"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CV" description="Cape Verde">
+    <rl:alias value="CPV"/>
+    <rl:alias value="132"/>
+    <rl:property name="alpha2Code" value="CV"/>
+    <rl:property name="alpha3Code" value="CPV"/>
+    <rl:property name="numericCode" value="132"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CX" description="Christmas Island">
+    <rl:alias value="CXR"/>
+    <rl:alias value="162"/>
+    <rl:property name="alpha2Code" value="CX"/>
+    <rl:property name="alpha3Code" value="CXR"/>
+    <rl:property name="numericCode" value="162"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CY" description="Cyprus">
+    <rl:alias value="CYP"/>
+    <rl:alias value="196"/>
+    <rl:property name="alpha2Code" value="CY"/>
+    <rl:property name="alpha3Code" value="CYP"/>
+    <rl:property name="numericCode" value="196"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="CZ" description="Czech Republic">
+    <rl:alias value="CZE"/>
+    <rl:alias value="203"/>
+    <rl:property name="alpha2Code" value="CZ"/>
+    <rl:property name="alpha3Code" value="CZE"/>
+    <rl:property name="numericCode" value="203"/>
+    <rl:property name="since" value="1993"/>
+  </rl:item>
+
+  <rl:item code="DE" description="Germany">
+    <rl:alias value="DEU"/>
+    <rl:alias value="276"/>
+    <rl:property name="alpha2Code" value="DE"/>
+    <rl:property name="alpha3Code" value="DEU"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in German: Deutschland.</rl:propertyValue>
+      <rl:propertyValue>Previous country name used by ISO: Germany, Federal Republic of</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="276"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="DJ" description="Djibouti">
+    <rl:alias value="DJI"/>
+    <rl:alias value="262"/>
+    <rl:property name="alpha2Code" value="DJ"/>
+    <rl:property name="alpha3Code" value="DJI"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from French Afar and Issas (AI)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="262"/>
+    <rl:property name="since" value="1977"/>
+  </rl:item>
+
+  <rl:item code="DK" description="Denmark">
+    <rl:alias value="DNK"/>
+    <rl:alias value="208"/>
+    <rl:property name="alpha2Code" value="DK"/>
+    <rl:property name="alpha3Code" value="DNK"/>
+    <rl:property name="numericCode" value="208"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="DM" description="Dominica">
+    <rl:alias value="DMA"/>
+    <rl:alias value="212"/>
+    <rl:property name="alpha2Code" value="DM"/>
+    <rl:property name="alpha3Code" value="DMA"/>
+    <rl:property name="numericCode" value="212"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="DO" description="Dominican Republic">
+    <rl:alias value="DOM"/>
+    <rl:alias value="214"/>
+    <rl:property name="alpha2Code" value="DO"/>
+    <rl:property name="alpha3Code" value="DOM"/>
+    <rl:property name="numericCode" value="214"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="DZ" description="Algeria">
+    <rl:alias value="DZA"/>
+    <rl:alias value="012"/>
+    <rl:property name="alpha2Code" value="DZ"/>
+    <rl:property name="alpha3Code" value="DZA"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Kabyle: Dzayer</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="012"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="EC" description="Ecuador">
+    <rl:alias value="ECU"/>
+    <rl:alias value="218"/>
+    <rl:property name="alpha2Code" value="EC"/>
+    <rl:property name="alpha3Code" value="ECU"/>
+    <rl:property name="numericCode" value="218"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="EE" description="Estonia">
+    <rl:alias value="EST"/>
+    <rl:alias value="233"/>
+    <rl:property name="alpha2Code" value="EE"/>
+    <rl:property name="alpha3Code" value="EST"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Estonian: Eesti</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="233"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="EG" description="Egypt">
+    <rl:alias value="EGY"/>
+    <rl:alias value="818"/>
+    <rl:property name="alpha2Code" value="EG"/>
+    <rl:property name="alpha3Code" value="EGY"/>
+    <rl:property name="numericCode" value="818"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="EH" description="Western Sahara">
+    <rl:alias value="ESH"/>
+    <rl:alias value="732"/>
+    <rl:property name="alpha2Code" value="EH"/>
+    <rl:property name="alpha3Code" value="ESH"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Disputed territory.</rl:propertyValue>
+      <rl:propertyValue>Previous country name used by ISO: Spanish Sahara (code taken from name in Spanish: Sahara español)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="732"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="ER" description="Eritrea">
+    <rl:alias value="ERI"/>
+    <rl:alias value="232"/>
+    <rl:property name="alpha2Code" value="ER"/>
+    <rl:property name="alpha3Code" value="ERI"/>
+    <rl:property name="numericCode" value="232"/>
+    <rl:property name="since" value="1993"/>
+  </rl:item>
+
+  <rl:item code="ES" description="Spain">
+    <rl:alias value="ESP"/>
+    <rl:alias value="724"/>
+    <rl:property name="alpha2Code" value="ES"/>
+    <rl:property name="alpha3Code" value="ESP"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Spanish: España</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="724"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="ET" description="Ethiopia">
+    <rl:alias value="ETH"/>
+    <rl:alias value="231"/>
+    <rl:property name="alpha2Code" value="ET"/>
+    <rl:property name="alpha3Code" value="ETH"/>
+    <rl:property name="numericCode" value="231"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="FI" description="Finland">
+    <rl:alias value="FIN"/>
+    <rl:alias value="246"/>
+    <rl:property name="alpha2Code" value="FI"/>
+    <rl:property name="alpha3Code" value="FIN"/>
+    <rl:property name="numericCode" value="246"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="FJ" description="Fiji">
+    <rl:alias value="FJI"/>
+    <rl:alias value="242"/>
+    <rl:property name="alpha2Code" value="FJ"/>
+    <rl:property name="alpha3Code" value="FJI"/>
+    <rl:property name="numericCode" value="242"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="FK" description="Falkland Islands (Malvinas)">
+    <rl:alias value="FLK"/>
+    <rl:alias value="238"/>
+    <rl:property name="alpha2Code" value="FK"/>
+    <rl:property name="alpha3Code" value="FLK"/>
+    <rl:property name="numericCode" value="238"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="FM" description="Micronesia, Federated States of">
+    <rl:alias value="FSM"/>
+    <rl:alias value="583"/>
+    <rl:property name="alpha2Code" value="FM"/>
+    <rl:property name="alpha3Code" value="FSM"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Micronesia</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="583"/>
+    <rl:property name="since" value="1986"/>
+  </rl:item>
+
+  <rl:item code="FO" description="Faroe Islands">
+    <rl:alias value="FRO"/>
+    <rl:alias value="234"/>
+    <rl:property name="alpha2Code" value="FO"/>
+    <rl:property name="alpha3Code" value="FRO"/>
+    <rl:property name="numericCode" value="234"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="FR" description="France">
+    <rl:alias value="FRA"/>
+    <rl:alias value="250"/>
+    <rl:property name="alpha2Code" value="FR"/>
+    <rl:property name="alpha3Code" value="FRA"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Includes Clipperton Island</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="250"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GA" description="Gabon">
+    <rl:alias value="GAB"/>
+    <rl:alias value="266"/>
+    <rl:property name="alpha2Code" value="GA"/>
+    <rl:property name="alpha3Code" value="GAB"/>
+    <rl:property name="numericCode" value="266"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GB" description="United Kingdom">
+    <rl:alias value="GBR"/>
+    <rl:alias value="826"/>
+    <rl:property name="alpha2Code" value="GB"/>
+    <rl:property name="alpha3Code" value="GBR"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from official name: United Kingdom of Great Britain and Northern Ireland UK also exceptionally reserved on request of the United Kingdom</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="826"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GD" description="Grenada">
+    <rl:alias value="GRD"/>
+    <rl:alias value="308"/>
+    <rl:property name="alpha2Code" value="GD"/>
+    <rl:property name="alpha3Code" value="GRD"/>
+    <rl:property name="numericCode" value="308"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GE" description="Georgia">
+    <rl:alias value="GEO"/>
+    <rl:alias value="268"/>
+    <rl:property name="alpha2Code" value="GE"/>
+    <rl:property name="alpha3Code" value="GEO"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>GE previously represented Gilbert and Ellice Islands</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="268"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="GF" description="French Guiana">
+    <rl:alias value="GUF"/>
+    <rl:alias value="254"/>
+    <rl:property name="alpha2Code" value="GF"/>
+    <rl:property name="alpha3Code" value="GUF"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in French: Guyane française</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="254"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GG" description="Guernsey">
+    <rl:alias value="GGY"/>
+    <rl:alias value="831"/>
+    <rl:property name="alpha2Code" value="GG"/>
+    <rl:property name="alpha3Code" value="GGY"/>
+    <rl:property name="numericCode" value="831"/>
+    <rl:property name="since" value="2006"/>
+  </rl:item>
+
+  <rl:item code="GH" description="Ghana">
+    <rl:alias value="GHA"/>
+    <rl:alias value="288"/>
+    <rl:property name="alpha2Code" value="GH"/>
+    <rl:property name="alpha3Code" value="GHA"/>
+    <rl:property name="numericCode" value="288"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GI" description="Gibraltar">
+    <rl:alias value="GIB"/>
+    <rl:alias value="292"/>
+    <rl:property name="alpha2Code" value="GI"/>
+    <rl:property name="alpha3Code" value="GIB"/>
+    <rl:property name="numericCode" value="292"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GL" description="Greenland">
+    <rl:alias value="GRL"/>
+    <rl:alias value="304"/>
+    <rl:property name="alpha2Code" value="GL"/>
+    <rl:property name="alpha3Code" value="GRL"/>
+    <rl:property name="numericCode" value="304"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GM" description="Gambia">
+    <rl:alias value="GMB"/>
+    <rl:alias value="270"/>
+    <rl:property name="alpha2Code" value="GM"/>
+    <rl:property name="alpha3Code" value="GMB"/>
+    <rl:property name="numericCode" value="270"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GN" description="Guinea">
+    <rl:alias value="GIN"/>
+    <rl:alias value="324"/>
+    <rl:property name="alpha2Code" value="GN"/>
+    <rl:property name="alpha3Code" value="GIN"/>
+    <rl:property name="numericCode" value="324"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GP" description="Guadeloupe">
+    <rl:alias value="GLP"/>
+    <rl:alias value="312"/>
+    <rl:property name="alpha2Code" value="GP"/>
+    <rl:property name="alpha3Code" value="GLP"/>
+    <rl:property name="numericCode" value="312"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GQ" description="Equatorial Guinea">
+    <rl:alias value="GNQ"/>
+    <rl:alias value="226"/>
+    <rl:property name="alpha2Code" value="GQ"/>
+    <rl:property name="alpha3Code" value="GNQ"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in French: Guinée équatoriale</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="226"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GR" description="Greece">
+    <rl:alias value="GRC"/>
+    <rl:alias value="300"/>
+    <rl:property name="alpha2Code" value="GR"/>
+    <rl:property name="alpha3Code" value="GRC"/>
+    <rl:property name="numericCode" value="300"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GS" description="South Georgia and the South Sandwich Islands">
+    <rl:alias value="SGS"/>
+    <rl:alias value="239"/>
+    <rl:property name="alpha2Code" value="GS"/>
+    <rl:property name="alpha3Code" value="SGS"/>
+    <rl:property name="numericCode" value="239"/>
+    <rl:property name="since" value="1993"/>
+  </rl:item>
+
+  <rl:item code="GT" description="Guatemala">
+    <rl:alias value="GTM"/>
+    <rl:alias value="320"/>
+    <rl:property name="alpha2Code" value="GT"/>
+    <rl:property name="alpha3Code" value="GTM"/>
+    <rl:property name="numericCode" value="320"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GU" description="Guam">
+    <rl:alias value="GUM"/>
+    <rl:alias value="316"/>
+    <rl:property name="alpha2Code" value="GU"/>
+    <rl:property name="alpha3Code" value="GUM"/>
+    <rl:property name="numericCode" value="316"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GW" description="Guinea-Bissau">
+    <rl:alias value="GNB"/>
+    <rl:alias value="624"/>
+    <rl:property name="alpha2Code" value="GW"/>
+    <rl:property name="alpha3Code" value="GNB"/>
+    <rl:property name="numericCode" value="624"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="GY" description="Guyana">
+    <rl:alias value="GUY"/>
+    <rl:alias value="328"/>
+    <rl:property name="alpha2Code" value="GY"/>
+    <rl:property name="alpha3Code" value="GUY"/>
+    <rl:property name="numericCode" value="328"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="HK" description="Hong Kong">
+    <rl:alias value="HKG"/>
+    <rl:alias value="344"/>
+    <rl:property name="alpha2Code" value="HK"/>
+    <rl:property name="alpha3Code" value="HKG"/>
+    <rl:property name="numericCode" value="344"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="HM" description="Heard Island and McDonald Islands">
+    <rl:alias value="HMD"/>
+    <rl:alias value="334"/>
+    <rl:property name="alpha2Code" value="HM"/>
+    <rl:property name="alpha3Code" value="HMD"/>
+    <rl:property name="numericCode" value="334"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="HN" description="Honduras">
+    <rl:alias value="HND"/>
+    <rl:alias value="340"/>
+    <rl:property name="alpha2Code" value="HN"/>
+    <rl:property name="alpha3Code" value="HND"/>
+    <rl:property name="numericCode" value="340"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="HR" description="Croatia">
+    <rl:alias value="HRV"/>
+    <rl:alias value="191"/>
+    <rl:property name="alpha2Code" value="HR"/>
+    <rl:property name="alpha3Code" value="HRV"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Croatian: Hrvatska</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="191"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="HT" description="Haiti">
+    <rl:alias value="HTI"/>
+    <rl:alias value="332"/>
+    <rl:property name="alpha2Code" value="HT"/>
+    <rl:property name="alpha3Code" value="HTI"/>
+    <rl:property name="numericCode" value="332"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="HU" description="Hungary">
+    <rl:alias value="HUN"/>
+    <rl:alias value="348"/>
+    <rl:property name="alpha2Code" value="HU"/>
+    <rl:property name="alpha3Code" value="HUN"/>
+    <rl:property name="numericCode" value="348"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="ID" description="Indonesia">
+    <rl:alias value="IDN"/>
+    <rl:alias value="360"/>
+    <rl:property name="alpha2Code" value="ID"/>
+    <rl:property name="alpha3Code" value="IDN"/>
+    <rl:property name="numericCode" value="360"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IE" description="Ireland">
+    <rl:alias value="IRL"/>
+    <rl:alias value="372"/>
+    <rl:property name="alpha2Code" value="IE"/>
+    <rl:property name="alpha3Code" value="IRL"/>
+    <rl:property name="numericCode" value="372"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IL" description="Israel">
+    <rl:alias value="ISR"/>
+    <rl:alias value="376"/>
+    <rl:property name="alpha2Code" value="IL"/>
+    <rl:property name="alpha3Code" value="ISR"/>
+    <rl:property name="numericCode" value="376"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IM" description="Isle of Man">
+    <rl:alias value="IMN"/>
+    <rl:alias value="833"/>
+    <rl:property name="alpha2Code" value="IM"/>
+    <rl:property name="alpha3Code" value="IMN"/>
+    <rl:property name="numericCode" value="833"/>
+    <rl:property name="since" value="2006"/>
+  </rl:item>
+
+  <rl:item code="IN" description="India">
+    <rl:alias value="IND"/>
+    <rl:alias value="356"/>
+    <rl:property name="alpha2Code" value="IN"/>
+    <rl:property name="alpha3Code" value="IND"/>
+    <rl:property name="numericCode" value="356"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IO" description="British Indian Ocean Territory">
+    <rl:alias value="IOT"/>
+    <rl:alias value="086"/>
+    <rl:property name="alpha2Code" value="IO"/>
+    <rl:property name="alpha3Code" value="IOT"/>
+    <rl:property name="numericCode" value="086"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IQ" description="Iraq">
+    <rl:alias value="IRQ"/>
+    <rl:alias value="368"/>
+    <rl:property name="alpha2Code" value="IQ"/>
+    <rl:property name="alpha3Code" value="IRQ"/>
+    <rl:property name="numericCode" value="368"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IR" description="Iran, Islamic Republic of">
+    <rl:alias value="IRN"/>
+    <rl:alias value="364"/>
+    <rl:property name="alpha2Code" value="IR"/>
+    <rl:property name="alpha3Code" value="IRN"/>
+    <rl:property name="numericCode" value="364"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IS" description="Iceland">
+    <rl:alias value="ISL"/>
+    <rl:alias value="352"/>
+    <rl:property name="alpha2Code" value="IS"/>
+    <rl:property name="alpha3Code" value="ISL"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Icelandic: Ísland</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="352"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="IT" description="Italy">
+    <rl:alias value="ITA"/>
+    <rl:alias value="380"/>
+    <rl:property name="alpha2Code" value="IT"/>
+    <rl:property name="alpha3Code" value="ITA"/>
+    <rl:property name="numericCode" value="380"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="JE" description="Jersey">
+    <rl:alias value="JEY"/>
+    <rl:alias value="832"/>
+    <rl:property name="alpha2Code" value="JE"/>
+    <rl:property name="alpha3Code" value="JEY"/>
+    <rl:property name="numericCode" value="832"/>
+    <rl:property name="since" value="2006"/>
+  </rl:item>
+
+  <rl:item code="JM" description="Jamaica">
+    <rl:alias value="JAM"/>
+    <rl:alias value="388"/>
+    <rl:property name="alpha2Code" value="JM"/>
+    <rl:property name="alpha3Code" value="JAM"/>
+    <rl:property name="numericCode" value="388"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="JO" description="Jordan">
+    <rl:alias value="JOR"/>
+    <rl:alias value="400"/>
+    <rl:property name="alpha2Code" value="JO"/>
+    <rl:property name="alpha3Code" value="JOR"/>
+    <rl:property name="numericCode" value="400"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="JP" description="Japan">
+    <rl:alias value="JPN"/>
+    <rl:alias value="392"/>
+    <rl:property name="alpha2Code" value="JP"/>
+    <rl:property name="alpha3Code" value="JPN"/>
+    <rl:property name="numericCode" value="392"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KE" description="Kenya">
+    <rl:alias value="KEN"/>
+    <rl:alias value="404"/>
+    <rl:property name="alpha2Code" value="KE"/>
+    <rl:property name="alpha3Code" value="KEN"/>
+    <rl:property name="numericCode" value="404"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KG" description="Kyrgyzstan">
+    <rl:alias value="KGZ"/>
+    <rl:alias value="417"/>
+    <rl:property name="alpha2Code" value="KG"/>
+    <rl:property name="alpha3Code" value="KGZ"/>
+    <rl:property name="numericCode" value="417"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="KH" description="Cambodia">
+    <rl:alias value="KHM"/>
+    <rl:alias value="116"/>
+    <rl:property name="alpha2Code" value="KH"/>
+    <rl:property name="alpha3Code" value="KHM"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from former name: Khmer Republic.</rl:propertyValue>
+      <rl:propertyValue>Previous country name used by ISO: Kampuchea</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="116"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KI" description="Kiribati">
+    <rl:alias value="KIR"/>
+    <rl:alias value="296"/>
+    <rl:property name="alpha2Code" value="KI"/>
+    <rl:property name="alpha3Code" value="KIR"/>
+    <rl:property name="numericCode" value="296"/>
+    <rl:property name="since" value="1979"/>
+  </rl:item>
+
+  <rl:item code="KM" description="Comoros">
+    <rl:alias value="COM"/>
+    <rl:alias value="174"/>
+    <rl:property name="alpha2Code" value="KM"/>
+    <rl:property name="alpha3Code" value="COM"/>
+    <rl:property name="numericCode" value="174"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Comorian: Komori</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KN" description="Saint Kitts and Nevis">
+    <rl:alias value="KNA"/>
+    <rl:alias value="659"/>
+    <rl:property name="alpha2Code" value="KN"/>
+    <rl:property name="alpha3Code" value="KNA"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Saint Kitts-Nevis-Anguilla</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="659"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KP" description="Korea, Democratic People's Republic of">
+    <rl:alias value="PRK"/>
+    <rl:alias value="408"/>
+    <rl:property name="alpha2Code" value="KP"/>
+    <rl:property name="alpha3Code" value="PRK"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>i.e., North Korea</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="408"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KR" description="Korea, Republic of">
+    <rl:alias value="KOR"/>
+    <rl:alias value="410"/>
+    <rl:property name="alpha2Code" value="KR"/>
+    <rl:property name="alpha3Code" value="KOR"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>i.e., South Korea</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="410"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KW" description="Kuwait">
+    <rl:alias value="KWT"/>
+    <rl:alias value="414"/>
+    <rl:property name="alpha2Code" value="KW"/>
+    <rl:property name="alpha3Code" value="KWT"/>
+    <rl:property name="numericCode" value="414"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KY" description="Cayman Islands">
+    <rl:alias value="CYM"/>
+    <rl:alias value="136"/>
+    <rl:property name="alpha2Code" value="KY"/>
+    <rl:property name="alpha3Code" value="CYM"/>
+    <rl:property name="numericCode" value="136"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="KZ" description="Kazakhstan">
+    <rl:alias value="KAZ"/>
+    <rl:alias value="398"/>
+    <rl:property name="alpha2Code" value="KZ"/>
+    <rl:property name="alpha3Code" value="KAZ"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Kazakstan</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="398"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="LA" description="Lao People's Democratic Republic">
+    <rl:alias value="LAO"/>
+    <rl:alias value="418"/>
+    <rl:property name="alpha2Code" value="LA"/>
+    <rl:property name="alpha3Code" value="LAO"/>
+    <rl:property name="numericCode" value="418"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LB" description="Lebanon">
+    <rl:alias value="LBN"/>
+    <rl:alias value="422"/>
+    <rl:property name="alpha2Code" value="LB"/>
+    <rl:property name="alpha3Code" value="LBN"/>
+    <rl:property name="numericCode" value="422"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LC" description="Saint Lucia">
+    <rl:alias value="LCA"/>
+    <rl:alias value="662"/>
+    <rl:property name="alpha2Code" value="LC"/>
+    <rl:property name="alpha3Code" value="LCA"/>
+    <rl:property name="numericCode" value="662"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LI" description="Liechtenstein">
+    <rl:alias value="LIE"/>
+    <rl:alias value="438"/>
+    <rl:property name="alpha2Code" value="LI"/>
+    <rl:property name="alpha3Code" value="LIE"/>
+    <rl:property name="numericCode" value="438"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LK" description="Sri Lanka">
+    <rl:alias value="LKA"/>
+    <rl:alias value="144"/>
+    <rl:property name="alpha2Code" value="LK"/>
+    <rl:property name="alpha3Code" value="LKA"/>
+    <rl:property name="numericCode" value="144"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LR" description="Liberia">
+    <rl:alias value="LBR"/>
+    <rl:alias value="430"/>
+    <rl:property name="alpha2Code" value="LR"/>
+    <rl:property name="alpha3Code" value="LBR"/>
+    <rl:property name="numericCode" value="430"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LS" description="Lesotho">
+    <rl:alias value="LSO"/>
+    <rl:alias value="426"/>
+    <rl:property name="alpha2Code" value="LS"/>
+    <rl:property name="alpha3Code" value="LSO"/>
+    <rl:property name="numericCode" value="426"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LT" description="Lithuania">
+    <rl:alias value="LTU"/>
+    <rl:alias value="440"/>
+    <rl:property name="alpha2Code" value="LT"/>
+    <rl:property name="alpha3Code" value="LTU"/>
+    <rl:property name="numericCode" value="440"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="LU" description="Luxembourg">
+    <rl:alias value="LUX"/>
+    <rl:alias value="442"/>
+    <rl:property name="alpha2Code" value="LU"/>
+    <rl:property name="alpha3Code" value="LUX"/>
+    <rl:property name="numericCode" value="442"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="LV" description="Latvia">
+    <rl:alias value="LVA"/>
+    <rl:alias value="428"/>
+    <rl:property name="alpha2Code" value="LV"/>
+    <rl:property name="alpha3Code" value="LVA"/>
+    <rl:property name="numericCode" value="428"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="LY" description="Libyan Arab Jamahiriya">
+    <rl:alias value="LBY"/>
+    <rl:alias value="434"/>
+    <rl:property name="alpha2Code" value="LY"/>
+    <rl:property name="alpha3Code" value="LBY"/>
+    <rl:property name="numericCode" value="434"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MA" description="Morocco">
+    <rl:alias value="MAR"/>
+    <rl:alias value="504"/>
+    <rl:property name="alpha2Code" value="MA"/>
+    <rl:property name="alpha3Code" value="MAR"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in French: Maroc</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="504"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MC" description="Monaco">
+    <rl:alias value="MCO"/>
+    <rl:alias value="492"/>
+    <rl:property name="alpha2Code" value="MC"/>
+    <rl:property name="alpha3Code" value="MCO"/>
+    <rl:property name="numericCode" value="492"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MD" description="Moldova, Republic of">
+    <rl:alias value="MDA"/>
+    <rl:alias value="498"/>
+    <rl:property name="alpha2Code" value="MD"/>
+    <rl:property name="alpha3Code" value="MDA"/>
+    <rl:property name="numericCode" value="498"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="ME" description="Montenegro">
+    <rl:alias value="MNE"/>
+    <rl:alias value="499"/>
+    <rl:property name="alpha2Code" value="ME"/>
+    <rl:property name="alpha3Code" value="MNE"/>
+    <rl:property name="numericCode" value="499"/>
+    <rl:property name="since" value="2006"/>
+  </rl:item>
+
+  <rl:item code="MF" description="Saint Martin (French part)">
+    <rl:alias value="MAF"/>
+    <rl:alias value="663"/>
+    <rl:property name="alpha2Code" value="MF"/>
+    <rl:property name="alpha3Code" value="MAF"/>
+    <rl:property name="numericCode" value="663"/>
+    <rl:property name="since" value="2007"/>
+  </rl:item>
+
+  <rl:item code="MG" description="Madagascar">
+    <rl:alias value="MDG"/>
+    <rl:alias value="450"/>
+    <rl:property name="alpha2Code" value="MG"/>
+    <rl:property name="alpha3Code" value="MDG"/>
+    <rl:property name="numericCode" value="450"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MH" description="Marshall Islands">
+    <rl:alias value="MHL"/>
+    <rl:alias value="584"/>
+    <rl:property name="alpha2Code" value="MH"/>
+    <rl:property name="alpha3Code" value="MHL"/>
+    <rl:property name="numericCode" value="584"/>
+    <rl:property name="since" value="1986"/>
+  </rl:item>
+
+  <rl:item code="MK" description="Macedonia, the former Yugoslav Republic of">
+    <rl:alias value="MKD"/>
+    <rl:alias value="807"/>
+    <rl:property name="alpha2Code" value="MK"/>
+    <rl:property name="alpha3Code" value="MKD"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Designated as such due to the Macedonia naming dispute.</rl:propertyValue>
+      <rl:propertyValue>Code taken from name in Macedonian: Makedonija</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="807"/>
+    <rl:property name="since" value="1993"/>
+  </rl:item>
+
+  <rl:item code="ML" description="Mali">
+    <rl:alias value="MLI"/>
+    <rl:alias value="466"/>
+    <rl:property name="alpha2Code" value="ML"/>
+    <rl:property name="alpha3Code" value="MLI"/>
+    <rl:property name="numericCode" value="466"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MM" description="Myanmar">
+    <rl:alias value="MMR"/>
+    <rl:alias value="104"/>
+    <rl:property name="alpha2Code" value="MM"/>
+    <rl:property name="alpha3Code" value="MMR"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from Burma (BU)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="104"/>
+    <rl:property name="since" value="1989"/>
+  </rl:item>
+
+  <rl:item code="MN" description="Mongolia">
+    <rl:alias value="MNG"/>
+    <rl:alias value="496"/>
+    <rl:property name="alpha2Code" value="MN"/>
+    <rl:property name="alpha3Code" value="MNG"/>
+    <rl:property name="numericCode" value="496"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MO" description="Macao">
+    <rl:alias value="MAC"/>
+    <rl:alias value="446"/>
+    <rl:property name="alpha2Code" value="MO"/>
+    <rl:property name="alpha3Code" value="MAC"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Macau</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="446"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MP" description="Northern Mariana Islands">
+    <rl:alias value="MNP"/>
+    <rl:alias value="580"/>
+    <rl:property name="alpha2Code" value="MP"/>
+    <rl:property name="alpha3Code" value="MNP"/>
+    <rl:property name="numericCode" value="580"/>
+    <rl:property name="since" value="1986"/>
+  </rl:item>
+
+  <rl:item code="MQ" description="Martinique">
+    <rl:alias value="MTQ"/>
+    <rl:alias value="474"/>
+    <rl:property name="alpha2Code" value="MQ"/>
+    <rl:property name="alpha3Code" value="MTQ"/>
+    <rl:property name="numericCode" value="474"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MR" description="Mauritania">
+    <rl:alias value="MRT"/>
+    <rl:alias value="478"/>
+    <rl:property name="alpha2Code" value="MR"/>
+    <rl:property name="alpha3Code" value="MRT"/>
+    <rl:property name="numericCode" value="478"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MS" description="Montserrat">
+    <rl:alias value="MSR"/>
+    <rl:alias value="500"/>
+    <rl:property name="alpha2Code" value="MS"/>
+    <rl:property name="alpha3Code" value="MSR"/>
+    <rl:property name="numericCode" value="500"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MT" description="Malta">
+    <rl:alias value="MLT"/>
+    <rl:alias value="470"/>
+    <rl:property name="alpha2Code" value="MT"/>
+    <rl:property name="alpha3Code" value="MLT"/>
+    <rl:property name="numericCode" value="470"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MU" description="Mauritius">
+    <rl:alias value="MUS"/>
+    <rl:alias value="480"/>
+    <rl:property name="alpha2Code" value="MU"/>
+    <rl:property name="alpha3Code" value="MUS"/>
+    <rl:property name="numericCode" value="480"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MV" description="Maldives">
+    <rl:alias value="MDV"/>
+    <rl:alias value="462"/>
+    <rl:property name="alpha2Code" value="MV"/>
+    <rl:property name="alpha3Code" value="MDV"/>
+    <rl:property name="numericCode" value="462"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MW" description="Malawi">
+    <rl:alias value="MWI"/>
+    <rl:alias value="454"/>
+    <rl:property name="alpha2Code" value="MW"/>
+    <rl:property name="alpha3Code" value="MWI"/>
+    <rl:property name="numericCode" value="454"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MX" description="Mexico">
+    <rl:alias value="MEX"/>
+    <rl:alias value="484"/>
+    <rl:property name="alpha2Code" value="MX"/>
+    <rl:property name="alpha3Code" value="MEX"/>
+    <rl:property name="numericCode" value="484"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MY" description="Malaysia">
+    <rl:alias value="MYS"/>
+    <rl:alias value="458"/>
+    <rl:property name="alpha2Code" value="MY"/>
+    <rl:property name="alpha3Code" value="MYS"/>
+    <rl:property name="numericCode" value="458"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="MZ" description="Mozambique">
+    <rl:alias value="MOZ"/>
+    <rl:alias value="508"/>
+    <rl:property name="alpha2Code" value="MZ"/>
+    <rl:property name="alpha3Code" value="MOZ"/>
+    <rl:property name="numericCode" value="508"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NA" description="Namibia">
+    <rl:alias value="NAM"/>
+    <rl:alias value="516"/>
+    <rl:property name="alpha2Code" value="NA"/>
+    <rl:property name="alpha3Code" value="NAM"/>
+    <rl:property name="numericCode" value="516"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NC" description="New Caledonia">
+    <rl:alias value="NCL"/>
+    <rl:alias value="540"/>
+    <rl:property name="alpha2Code" value="NC"/>
+    <rl:property name="alpha3Code" value="NCL"/>
+    <rl:property name="numericCode" value="540"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NE" description="Niger">
+    <rl:alias value="NER"/>
+    <rl:alias value="562"/>
+    <rl:property name="alpha2Code" value="NE"/>
+    <rl:property name="alpha3Code" value="NER"/>
+    <rl:property name="numericCode" value="562"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NF" description="Norfolk Island">
+    <rl:alias value="NFK"/>
+    <rl:alias value="574"/>
+    <rl:property name="alpha2Code" value="NF"/>
+    <rl:property name="alpha3Code" value="NFK"/>
+    <rl:property name="numericCode" value="574"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NG" description="Nigeria">
+    <rl:alias value="NGA"/>
+    <rl:alias value="566"/>
+    <rl:property name="alpha2Code" value="NG"/>
+    <rl:property name="alpha3Code" value="NGA"/>
+    <rl:property name="numericCode" value="566"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NI" description="Nicaragua">
+    <rl:alias value="NIC"/>
+    <rl:alias value="558"/>
+    <rl:property name="alpha2Code" value="NI"/>
+    <rl:property name="alpha3Code" value="NIC"/>
+    <rl:property name="numericCode" value="558"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NL" description="Netherlands">
+    <rl:alias value="NLD"/>
+    <rl:alias value="528"/>
+    <rl:property name="alpha2Code" value="NL"/>
+    <rl:property name="alpha3Code" value="NLD"/>
+    <rl:property name="numericCode" value="528"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NO" description="Norway">
+    <rl:alias value="NOR"/>
+    <rl:alias value="578"/>
+    <rl:property name="alpha2Code" value="NO"/>
+    <rl:property name="alpha3Code" value="NOR"/>
+    <rl:property name="numericCode" value="578"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NP" description="Nepal">
+    <rl:alias value="NPL"/>
+    <rl:alias value="524"/>
+    <rl:property name="alpha2Code" value="NP"/>
+    <rl:property name="alpha3Code" value="NPL"/>
+    <rl:property name="numericCode" value="524"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NR" description="Nauru">
+    <rl:alias value="NRU"/>
+    <rl:alias value="520"/>
+    <rl:property name="alpha2Code" value="NR"/>
+    <rl:property name="alpha3Code" value="NRU"/>
+    <rl:property name="numericCode" value="520"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NU" description="Niue">
+    <rl:alias value="NIU"/>
+    <rl:alias value="570"/>
+    <rl:property name="alpha2Code" value="NU"/>
+    <rl:property name="alpha3Code" value="NIU"/>
+    <rl:property name="numericCode" value="570"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="NZ" description="New Zealand">
+    <rl:alias value="NZL"/>
+    <rl:alias value="554"/>
+    <rl:property name="alpha2Code" value="NZ"/>
+    <rl:property name="alpha3Code" value="NZL"/>
+    <rl:property name="numericCode" value="554"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="OM" description="Oman">
+    <rl:alias value="OMN"/>
+    <rl:alias value="512"/>
+    <rl:property name="alpha2Code" value="OM"/>
+    <rl:property name="alpha3Code" value="OMN"/>
+    <rl:property name="numericCode" value="512"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PA" description="Panama">
+    <rl:alias value="PAN"/>
+    <rl:alias value="591"/>
+    <rl:property name="alpha2Code" value="PA"/>
+    <rl:property name="alpha3Code" value="PAN"/>
+    <rl:property name="numericCode" value="591"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PE" description="Peru">
+    <rl:alias value="PER"/>
+    <rl:alias value="604"/>
+    <rl:property name="alpha2Code" value="PE"/>
+    <rl:property name="alpha3Code" value="PER"/>
+    <rl:property name="numericCode" value="604"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PF" description="French Polynesia">
+    <rl:alias value="PYF"/>
+    <rl:alias value="258"/>
+    <rl:property name="alpha2Code" value="PF"/>
+    <rl:property name="alpha3Code" value="PYF"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in French: Polynésie française</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="258"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PG" description="Papua New Guinea">
+    <rl:alias value="PNG"/>
+    <rl:alias value="598"/>
+    <rl:property name="alpha2Code" value="PG"/>
+    <rl:property name="alpha3Code" value="PNG"/>
+    <rl:property name="numericCode" value="598"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PH" description="Philippines">
+    <rl:alias value="PHL"/>
+    <rl:alias value="608"/>
+    <rl:property name="alpha2Code" value="PH"/>
+    <rl:property name="alpha3Code" value="PHL"/>
+    <rl:property name="numericCode" value="608"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PK" description="Pakistan">
+    <rl:alias value="PAK"/>
+    <rl:alias value="586"/>
+    <rl:property name="alpha2Code" value="PK"/>
+    <rl:property name="alpha3Code" value="PAK"/>
+    <rl:property name="numericCode" value="586"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PL" description="Poland">
+    <rl:alias value="POL"/>
+    <rl:alias value="616"/>
+    <rl:property name="alpha2Code" value="PL"/>
+    <rl:property name="alpha3Code" value="POL"/>
+    <rl:property name="numericCode" value="616"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PM" description="Saint Pierre and Miquelon">
+    <rl:alias value="SPM"/>
+    <rl:alias value="666"/>
+    <rl:property name="alpha2Code" value="PM"/>
+    <rl:property name="alpha3Code" value="SPM"/>
+    <rl:property name="numericCode" value="666"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PN" description="Pitcairn">
+    <rl:alias value="PCN"/>
+    <rl:alias value="612"/>
+    <rl:property name="alpha2Code" value="PN"/>
+    <rl:property name="alpha3Code" value="PCN"/>
+    <rl:property name="numericCode" value="612"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PR" description="Puerto Rico">
+    <rl:alias value="PRI"/>
+    <rl:alias value="630"/>
+    <rl:property name="alpha2Code" value="PR"/>
+    <rl:property name="alpha3Code" value="PRI"/>
+    <rl:property name="numericCode" value="630"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PS" description="Palestinian Territory, Occupied">
+    <rl:alias value="PSE"/>
+    <rl:alias value="275"/>
+    <rl:property name="alpha2Code" value="PS"/>
+    <rl:property name="alpha3Code" value="PSE"/>
+    <rl:property name="numericCode" value="275"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Consists of the West Bank and the Gaza Strip</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="since" value="1999"/>
+  </rl:item>
+
+  <rl:item code="PT" description="Portugal">
+    <rl:alias value="PRT"/>
+    <rl:alias value="620"/>
+    <rl:property name="alpha2Code" value="PT"/>
+    <rl:property name="alpha3Code" value="PRT"/>
+    <rl:property name="numericCode" value="620"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="PW" description="Palau">
+    <rl:alias value="PLW"/>
+    <rl:alias value="585"/>
+    <rl:property name="alpha2Code" value="PW"/>
+    <rl:property name="alpha3Code" value="PLW"/>
+    <rl:property name="numericCode" value="585"/>
+    <rl:property name="since" value="1986"/>
+  </rl:item>
+
+  <rl:item code="PY" description="Paraguay">
+    <rl:alias value="PRY"/>
+    <rl:alias value="600"/>
+    <rl:property name="alpha2Code" value="PY"/>
+    <rl:property name="alpha3Code" value="PRY"/>
+    <rl:property name="numericCode" value="600"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="QA" description="Qatar">
+    <rl:alias value="QAT"/>
+    <rl:alias value="634"/>
+    <rl:property name="alpha2Code" value="QA"/>
+    <rl:property name="alpha3Code" value="QAT"/>
+    <rl:property name="numericCode" value="634"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="RE" description="Réunion">
+    <rl:alias value="REU"/>
+    <rl:alias value="638"/>
+    <rl:property name="alpha2Code" value="RE"/>
+    <rl:property name="alpha3Code" value="REU"/>
+    <rl:property name="numericCode" value="638"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="RO" description="Romania">
+    <rl:alias value="ROU"/>
+    <rl:alias value="642"/>
+    <rl:property name="alpha2Code" value="RO"/>
+    <rl:property name="alpha3Code" value="ROU"/>
+    <rl:property name="numericCode" value="642"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="RS" description="Serbia">
+    <rl:alias value="SRB"/>
+    <rl:alias value="688"/>
+    <rl:property name="alpha2Code" value="RS"/>
+    <rl:property name="alpha3Code" value="SRB"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from official name: Republic of Serbia (see Serbian country codes)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="688"/>
+    <rl:property name="since" value="2006"/>
+  </rl:item>
+
+  <rl:item code="RU" description="Russian Federation">
+    <rl:alias value="RUS"/>
+    <rl:alias value="643"/>
+    <rl:property name="alpha2Code" value="RU"/>
+    <rl:property name="alpha3Code" value="RUS"/>
+    <rl:property name="numericCode" value="643"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="RW" description="Rwanda">
+    <rl:alias value="RWA"/>
+    <rl:alias value="646"/>
+    <rl:property name="alpha2Code" value="RW"/>
+    <rl:property name="alpha3Code" value="RWA"/>
+    <rl:property name="numericCode" value="646"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SA" description="Saudi Arabia">
+    <rl:alias value="SAU"/>
+    <rl:alias value="682"/>
+    <rl:property name="alpha2Code" value="SA"/>
+    <rl:property name="alpha3Code" value="SAU"/>
+    <rl:property name="numericCode" value="682"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SB" description="Solomon Islands">
+    <rl:alias value="SLB"/>
+    <rl:alias value="090"/>
+    <rl:property name="alpha2Code" value="SB"/>
+    <rl:property name="alpha3Code" value="SLB"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from former name: British Solomon Islands</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="090"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SC" description="Seychelles">
+    <rl:alias value="SYC"/>
+    <rl:alias value="690"/>
+    <rl:property name="alpha2Code" value="SC"/>
+    <rl:property name="alpha3Code" value="SYC"/>
+    <rl:property name="numericCode" value="690"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SD" description="Sudan">
+    <rl:alias value="SDN"/>
+    <rl:alias value="736"/>
+    <rl:property name="alpha2Code" value="SD"/>
+    <rl:property name="alpha3Code" value="SDN"/>
+    <rl:property name="numericCode" value="736"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SE" description="Sweden">
+    <rl:alias value="SWE"/>
+    <rl:alias value="752"/>
+    <rl:property name="alpha2Code" value="SE"/>
+    <rl:property name="alpha3Code" value="SWE"/>
+    <rl:property name="numericCode" value="752"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SG" description="Singapore">
+    <rl:alias value="SGP"/>
+    <rl:alias value="702"/>
+    <rl:property name="alpha2Code" value="SG"/>
+    <rl:property name="alpha3Code" value="SGP"/>
+    <rl:property name="numericCode" value="702"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SH" description="Saint Helena">
+    <rl:alias value="SHN"/>
+    <rl:alias value="654654"/>
+    <rl:property name="alpha2Code" value="SH"/>
+    <rl:property name="alpha3Code" value="SHN"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Consists of Saint Helena, Ascension Island, and Tristan da Cunha</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="654"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SI" description="Slovenia">
+    <rl:alias value="SVN"/>
+    <rl:alias value="705"/>
+    <rl:property name="alpha2Code" value="SI"/>
+    <rl:property name="alpha3Code" value="SVN"/>
+    <rl:property name="numericCode" value="705"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="SJ" description="Svalbard and Jan Mayen">
+    <rl:alias value="SJM"/>
+    <rl:alias value="744"/>
+    <rl:property name="alpha2Code" value="SJ"/>
+    <rl:property name="alpha3Code" value="SJM"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Consists of Svalbard and Jan Mayen</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="744"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SK" description="Slovakia">
+    <rl:alias value="SVK"/>
+    <rl:alias value="703"/>
+    <rl:property name="alpha2Code" value="SK"/>
+    <rl:property name="alpha3Code" value="SVK"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>SK previously represented Sikkim</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="703"/>
+    <rl:property name="since" value="1993"/>
+  </rl:item>
+
+  <rl:item code="SL" description="Sierra Leone">
+    <rl:alias value="SLE"/>
+    <rl:alias value="694"/>
+    <rl:property name="alpha2Code" value="SL"/>
+    <rl:property name="alpha3Code" value="SLE"/>
+    <rl:property name="numericCode" value="694"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SM" description="San Marino">
+    <rl:alias value="SMR"/>
+    <rl:alias value="674"/>
+    <rl:property name="alpha2Code" value="SM"/>
+    <rl:property name="alpha3Code" value="SMR"/>
+    <rl:property name="numericCode" value="674"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SN" description="Senegal">
+    <rl:alias value="SEN"/>
+    <rl:alias value="686"/>
+    <rl:property name="alpha2Code" value="SN"/>
+    <rl:property name="alpha3Code" value="SEN"/>
+    <rl:property name="numericCode" value="686"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SO" description="Somalia">
+    <rl:alias value="SOM"/>
+    <rl:alias value="706"/>
+    <rl:property name="alpha2Code" value="SO"/>
+    <rl:property name="alpha3Code" value="SOM"/>
+    <rl:property name="numericCode" value="706"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SR" description="Suriname">
+    <rl:alias value="SUR"/>
+    <rl:alias value="740"/>
+    <rl:property name="alpha2Code" value="SR"/>
+    <rl:property name="alpha3Code" value="SUR"/>
+    <rl:property name="numericCode" value="740"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="ST" description="Sao Tome and Principe">
+    <rl:alias value="STP"/>
+    <rl:alias value="678"/>
+    <rl:property name="alpha2Code" value="ST"/>
+    <rl:property name="alpha3Code" value="STP"/>
+    <rl:property name="numericCode" value="678"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SV" description="El Salvador">
+    <rl:alias value="SLV"/>
+    <rl:alias value="222"/>
+    <rl:property name="alpha2Code" value="SV"/>
+    <rl:property name="alpha3Code" value="SLV"/>
+    <rl:property name="numericCode" value="222"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SY" description="Syrian Arab Republic">
+    <rl:alias value="SYR"/>
+    <rl:alias value="760"/>
+    <rl:property name="alpha2Code" value="SY"/>
+    <rl:property name="alpha3Code" value="SYR"/>
+    <rl:property name="numericCode" value="760"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="SZ" description="Swaziland">
+    <rl:alias value="SWZ"/>
+    <rl:alias value="748"/>
+    <rl:property name="alpha2Code" value="SZ"/>
+    <rl:property name="alpha3Code" value="SWZ"/>
+    <rl:property name="numericCode" value="748"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TC" description="Turks and Caicos Islands">
+    <rl:alias value="TCA"/>
+    <rl:alias value="796"/>
+    <rl:property name="alpha2Code" value="TC"/>
+    <rl:property name="alpha3Code" value="TCA"/>
+    <rl:property name="numericCode" value="796"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TD" description="Chad">
+    <rl:alias value="TCD"/>
+    <rl:alias value="148"/>
+    <rl:property name="alpha2Code" value="TD"/>
+    <rl:property name="alpha3Code" value="TCD"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in French: Tchad</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="148"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TF" description="French Southern Territories">
+    <rl:alias value="ATF"/>
+    <rl:alias value="260"/>
+    <rl:property name="alpha2Code" value="TF"/>
+    <rl:property name="alpha3Code" value="ATF"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Covers the territory of the French Southern and Antarctic Lands except Adélie Land, Code taken from name in French: Terres australes françaises</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="260"/>
+    <rl:property name="since" value="1979"/>
+  </rl:item>
+
+  <rl:item code="TG" description="Togo">
+    <rl:alias value="TGO"/>
+    <rl:alias value="768"/>
+    <rl:property name="alpha2Code" value="TG"/>
+    <rl:property name="alpha3Code" value="TGO"/>
+    <rl:property name="numericCode" value="768"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TH" description="Thailand">
+    <rl:alias value="THA"/>
+    <rl:alias value="764"/>
+    <rl:property name="alpha2Code" value="TH"/>
+    <rl:property name="alpha3Code" value="THA"/>
+    <rl:property name="numericCode" value="764"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TJ" description="Tajikistan">
+    <rl:alias value="TJK"/>
+    <rl:alias value="762"/>
+    <rl:property name="alpha2Code" value="TJ"/>
+    <rl:property name="alpha3Code" value="TJK"/>
+    <rl:property name="numericCode" value="762"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="TK" description="Tokelau">
+    <rl:alias value="TKL"/>
+    <rl:alias value="772"/>
+    <rl:property name="alpha2Code" value="TK"/>
+    <rl:property name="alpha3Code" value="TKL"/>
+    <rl:property name="numericCode" value="772"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TL" description="Timor-Leste">
+    <rl:alias value="TLS"/>
+    <rl:alias value="626"/>
+    <rl:property name="alpha2Code" value="TL"/>
+    <rl:property name="alpha3Code" value="TLS"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from East Timor (TP)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="626"/>
+    <rl:property name="since" value="2002"/>
+  </rl:item>
+
+  <rl:item code="TM" description="Turkmenistan">
+    <rl:alias value="TKM"/>
+    <rl:alias value="795"/>
+    <rl:property name="alpha2Code" value="TM"/>
+    <rl:property name="alpha3Code" value="TKM"/>
+    <rl:property name="numericCode" value="795"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="TN" description="Tunisia">
+    <rl:alias value="TUN"/>
+    <rl:alias value="788"/>
+    <rl:property name="alpha2Code" value="TN"/>
+    <rl:property name="alpha3Code" value="TUN"/>
+    <rl:property name="numericCode" value="788"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TO" description="Tonga">
+    <rl:alias value="TON"/>
+    <rl:alias value="776"/>
+    <rl:property name="alpha2Code" value="TO"/>
+    <rl:property name="alpha3Code" value="TON"/>
+    <rl:property name="numericCode" value="776"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TR" description="Turkey">
+    <rl:alias value="TUR"/>
+    <rl:alias value="792"/>
+    <rl:property name="alpha2Code" value="TR"/>
+    <rl:property name="alpha3Code" value="TUR"/>
+    <rl:property name="numericCode" value="792"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TT" description="Trinidad and Tobago">
+    <rl:alias value="TTO"/>
+    <rl:alias value="780"/>
+    <rl:property name="alpha2Code" value="TT"/>
+    <rl:property name="alpha3Code" value="TTO"/>
+    <rl:property name="numericCode" value="780"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TV" description="Tuvalu">
+    <rl:alias value="TUV"/>
+    <rl:alias value="798"/>
+    <rl:property name="alpha2Code" value="TV"/>
+    <rl:property name="alpha3Code" value="TUV"/>
+    <rl:property name="numericCode" value="798"/>
+    <rl:property name="since" value="1979"/>
+  </rl:item>
+
+  <rl:item code="TW" description="Taiwan, Province of China">
+    <rl:alias value="TWN"/>
+    <rl:alias value="158"/>
+    <rl:property name="alpha2Code" value="TW"/>
+    <rl:property name="alpha3Code" value="TWN"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Covers the current jurisdiction of the Republic of China except Kinmen and Lienchiang. Designated as such due to its political status within the United Nations</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="158"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="TZ" description="Tanzania, United Republic of">
+    <rl:alias value="TZA"/>
+    <rl:alias value="834"/>
+    <rl:property name="alpha2Code" value="TZ"/>
+    <rl:property name="alpha3Code" value="TZA"/>
+    <rl:property name="numericCode" value="834"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="UA" description="Ukraine">
+    <rl:alias value="UKR"/>
+    <rl:alias value="804"/>
+    <rl:property name="alpha2Code" value="UA"/>
+    <rl:property name="alpha3Code" value="UKR"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Ukrainian SSR</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="804"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="UG" description="Uganda">
+    <rl:alias value="UGA"/>
+    <rl:alias value="800"/>
+    <rl:property name="alpha2Code" value="UG"/>
+    <rl:property name="alpha3Code" value="UGA"/>
+    <rl:property name="numericCode" value="800"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="UM" description="United States Minor Outlying Islands">
+    <rl:alias value="UMI"/>
+    <rl:alias value="581"/>
+    <rl:property name="alpha2Code" value="UM"/>
+    <rl:property name="alpha3Code" value="UMI"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Consists of Baker Island, Howland Island, Jarvis Island, Johnston Atoll, Kingman Reef, Midway Islands, Navassa Island, Palmyra Atoll, and Wake Island</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="581"/>
+    <rl:property name="since" value="1986"/>
+  </rl:item>
+
+  <rl:item code="US" description="United States">
+    <rl:alias value="USA"/>
+    <rl:alias value="840"/>
+    <rl:property name="alpha2Code" value="US"/>
+    <rl:property name="alpha3Code" value="USA"/>
+    <rl:property name="numericCode" value="840"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="UY" description="Uruguay">
+    <rl:alias value="URY"/>
+    <rl:alias value="858"/>
+    <rl:property name="alpha2Code" value="UY"/>
+    <rl:property name="alpha3Code" value="URY"/>
+    <rl:property name="numericCode" value="858"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="UZ" description="Uzbekistan">
+    <rl:alias value="UZB"/>
+    <rl:alias value="860"/>
+    <rl:property name="alpha2Code" value="UZ"/>
+    <rl:property name="alpha3Code" value="UZB"/>
+    <rl:property name="numericCode" value="860"/>
+    <rl:property name="since" value="1992"/>
+  </rl:item>
+
+  <rl:item code="VA" description="Holy See (Vatican City State)">
+    <rl:alias value="VAT"/>
+    <rl:alias value="336"/>
+    <rl:property name="alpha2Code" value="VA"/>
+    <rl:property name="alpha3Code" value="VAT"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Territory of the Holy See.</rl:propertyValue>
+      <rl:propertyValue>Previous country name used by ISO: Vatican City State (Holy See)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="336"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="VC" description="Saint Vincent and the Grenadines">
+    <rl:alias value="VCT"/>
+    <rl:alias value="670"/>
+    <rl:property name="alpha2Code" value="VC"/>
+    <rl:property name="alpha3Code" value="VCT"/>
+    <rl:property name="numericCode" value="670"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="VE" description="Venezuela, Bolivarian Republic of">
+    <rl:alias value="VEN"/>
+    <rl:alias value="862"/>
+    <rl:property name="alpha2Code" value="VE"/>
+    <rl:property name="alpha3Code" value="VEN"/>
+    <rl:property name="numericCode" value="862"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Venezuela</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="VG" description="Virgin Islands, British">
+    <rl:alias value="VGB"/>
+    <rl:alias value="092"/>
+    <rl:property name="alpha2Code" value="VG"/>
+    <rl:property name="alpha3Code" value="VGB"/>
+    <rl:property name="numericCode" value="092"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="VI" description="Virgin Islands, U.S.">
+    <rl:alias value="VIR"/>
+    <rl:alias value="850"/>
+    <rl:property name="alpha2Code" value="VI"/>
+    <rl:property name="alpha3Code" value="VIR"/>
+    <rl:property name="numericCode" value="850"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="VN" description="Viet Nam">
+    <rl:alias value="VNM"/>
+    <rl:alias value="704"/>
+    <rl:property name="alpha2Code" value="VN"/>
+    <rl:property name="alpha3Code" value="VNM"/>
+    <rl:property name="numericCode" value="704"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="VU" description="Vanuatu">
+    <rl:alias value="VUT"/>
+    <rl:alias value="548"/>
+    <rl:property name="alpha2Code" value="VU"/>
+    <rl:property name="alpha3Code" value="VUT"/>
+    <rl:property name="numericCode" value="548"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from New Hebrides (NH)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="since" value="1980"/>
+  </rl:item>
+
+  <rl:item code="WF" description="Wallis and Futuna">
+    <rl:alias value="WLF"/>
+    <rl:alias value="876"/>
+    <rl:property name="alpha2Code" value="WF"/>
+    <rl:property name="alpha3Code" value="WLF"/>
+    <rl:property name="numericCode" value="876"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="WS" description="Samoa">
+    <rl:alias value="WSM"/>
+    <rl:alias value="882"/>
+    <rl:property name="alpha2Code" value="WS"/>
+    <rl:property name="alpha3Code" value="WSM"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from former name: Western Samoa</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="882"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="YE" description="Yemen">
+    <rl:alias value="YEM"/>
+    <rl:alias value="887"/>
+    <rl:property name="alpha2Code" value="YE"/>
+    <rl:property name="alpha3Code" value="YEM"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Previous country name used by ISO: Yemen, Republic of</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="887"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="YT" description="Mayotte">
+    <rl:alias value="MYT"/>
+    <rl:alias value="175"/>
+    <rl:property name="alpha2Code" value="YT"/>
+    <rl:property name="alpha3Code" value="MYT"/>
+    <rl:property name="numericCode" value="175"/>
+    <rl:property name="since" value="1993"/>
+  </rl:item>
+
+  <rl:item code="ZA" description="South Africa">
+    <rl:alias value="ZAF"/>
+    <rl:alias value="710"/>
+    <rl:property name="alpha2Code" value="ZA"/>
+    <rl:property name="alpha3Code" value="ZAF"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Code taken from name in Dutch: Zuid-Afrika</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="710"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="ZM" description="Zambia">
+    <rl:alias value="ZMB"/>
+    <rl:alias value="894"/>
+    <rl:property name="alpha2Code" value="ZM"/>
+    <rl:property name="alpha3Code" value="ZMB"/>
+    <rl:property name="numericCode" value="894"/>
+    <rl:property name="since" value="1974"/>
+  </rl:item>
+
+  <rl:item code="ZW" description="Zimbabwe">
+    <rl:alias value="ZWE"/>
+    <rl:alias value="716"/>
+    <rl:property name="alpha2Code" value="ZW"/>
+    <rl:property name="alpha3Code" value="ZWE"/>
+    <rl:indexedProperty name="notes">
+      <rl:propertyValue>Name changed from Southern Rhodesia (RH)</rl:propertyValue>
+    </rl:indexedProperty>
+    <rl:property name="numericCode" value="716"/>
+    <rl:property name="since" value="1980"/>
+  </rl:item>
+
+
+</rl:refList>

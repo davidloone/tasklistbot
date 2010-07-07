@@ -1,0 +1,67 @@
+<!--
+  ~ Copyright 2009, David G Loone
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html>
+  <head>
+    <title>au.id.loone.util.exception</title>
+  </head>
+
+  <body>
+    Code to assist with exception handling,
+    including the exception classes themselves.
+
+    <p>This package implements a certain philosophy for runtime (unchecked) exception handling.
+      The basis of this philosophy is that the only use for runtime exceptions
+      is to provide forensics for developer support to diagnose problems.
+      Given that premise,
+      the only useful runtime exception is {@link au.id.loone.util.exception.FatalException}.
+      This class provides extra failities for transporting useful information
+      from deep within the application that will be of use to support staff.</p>
+
+    <p>The {@link au.id.loone.util.exception.FatalException} class contains a {@link java.util.Map map}
+      of name/value pairs that can application code can put values into for later use.
+      Each application layer contains information particular to that layer,
+      that is likely not known to other layers.
+      As the exception bubbles up the stack,
+      successive layers of the application can add their own data to the exception,
+      then re-throw it.</p>
+
+    <p>Re-throwing the same exception
+      (rather than wrapping the exception and throwing the wrapping exception)
+      avoids the result of having very log stack traces when the exception list is unwound.</p>
+
+    <p>This leads to a coding idiom like the following:</p>
+    <table align="center" border="1" cellpadding="3" cellspacing="0" width="90%">
+      <tr>
+        <td><pre>try {
+    callSomeService(arg1, arg2);
+}
+catch (final FatalException fe) {
+    fe.addProperty(arg1, "arg1.prop1");
+}
+catch (final RuntimeException e) {
+    final FatalException fe = new FatalException("PROBLEM_WITH_MY_SERVICE", e);
+    fe.addProperty(arg1, "arg1.prop1");
+    throw fe;
+}</pre></td>
+      </tr>
+    </table>
+
+    <h3>Utilities</h3>
+
+    <p>Ideally,
+      a fatal exception thrown by the application should be logged once and only once.</p>
+  </body>
+
+</html>

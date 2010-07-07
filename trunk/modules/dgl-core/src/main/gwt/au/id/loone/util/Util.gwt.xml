@@ -1,0 +1,12 @@
+<module>
+
+  <inherits name="au.id.loone.util.reflist.RefList"/>
+  <inherits name="com.google.gwt.user.User"/>
+
+  <source path="">
+    <include name="DGLStringUtil.java"/>
+    <include name="DGLUtil.java"/>
+    <include name="ReallyCloneable.java"/>
+  </source>
+
+</module>
