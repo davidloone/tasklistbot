@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration
+    SYSTEM "log4j.dtd"
+  >
+
+<log4j:configuration
+    debug="false"
+    xmlns:log4j='http://jakarta.apache.org/log4j/'
+  >
+
+  <!--
+    - Logs to stdout (or more precisely, System.out).
+    -->
+  <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+    <layout class="au.id.loone.util.tracing.PatternLayout">
+      <param name="ConversionPattern" value="&lt;TRACE&gt;{%d} %-5p [%t] %c (%F:%L) %m&lt;/TRACE&gt;%n"/>
+    </layout>
+  </appender>
+
+  <category name="org.apache.log4j.xml">
+    <priority value="info"/>
+  </category>
+
+  <category name="org.apache.commons">
+    <priority value="info"/>
+  </category>
+
+  <category name="org.apache.velocity">
+    <priority value="info"/>
+  </category>
+
+  <category name="org.apache">
+    <priority value="info"/>
+  </category>
+
+  <category name="org.quartz.impl.jdbcjobstore">
+    <priority value="error"/>
+  </category>
+
+  <!--
+    - Root logger.
+    -->
+  <root>
+    <priority value="debug"/>
+    <appender-ref ref="STDOUT"/>
+  </root>
+
+</log4j:configuration>

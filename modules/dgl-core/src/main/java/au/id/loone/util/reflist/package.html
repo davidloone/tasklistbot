@@ -1,0 +1,121 @@
+<!--
+  ~ Copyright 2007, David G Loone
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  <head>
+    <title>au.id.loone.util.reflist</title>
+  </head>
+
+  <body>
+    A framework for managing reference lists.
+
+    <h3>1. Introduction</h3>
+
+    <p>A reference list is an enumeration of items that has the following properties:</p>
+      <ul>
+      <li>unchanging:
+        The items in the list, and the properties of those items
+        does not change on the order of the application server lifecycle.
+        In practice,
+        this means that it is ok for the application to load reference list values at startup,
+        and cache them until the application server is next restarted.</li>
+      <li>ordered:
+        The items in a reference list have a known natural ordering,
+        and that natural ordering is constant each time the reference list is accessed or displayed.
+        Orderings of a reference list other than the natural ordering are possible.</li>
+      <li>distinct:
+        It is possible to uniquely identify each item in the reference list.</li>
+    </ul>
+
+    <p>The basic model for a reference list is a HTML SELECT element.
+      Each option in the element has a value
+      (the string that appears in the HTTP post when the form is submitted)
+      and a body
+      (the value that is displayed to the user in the dropdown).
+      In our reference lists,
+      these are referred to as the code and description respectively.
+      When a reference item is persisted,
+      it is usually the code that is saved.
+      When a reference item is displayed to a user,
+      it is usually the description that is displayed.</p>
+
+    <p>Thus, there are constraints on reference lists, viz:</p>
+    <ul>
+      <li>The codes for each item in a list MUST BE unique
+        (across the reference list).</li>
+      <li>The descriptions for each item in a list SHOULD BE unique
+        (across the reference list).
+        There is no strict requirement for descriptions to be unique,
+        but usability may suffer if they are not.</li>
+    </ul>
+
+    <p>Each reference list also has the following attributes:</p>
+    <ul>
+      <li>name:
+        Each reference list has a name that is unique across all the reference lists.
+        Reference lists should be referred to by their name.
+        The reference list name should be a camel-case identifier,
+        starting with an uppercase letter.
+        The reference list name should be the singular form of the name
+        (eg, PropertyClass rather than PropertyClasses).</li>
+      <li>version number:
+        An integer that should be incremented each time a change is made to the reference list.
+        If an implementation has to detect changes to a reference list,
+        it should be able to rely merely on detecting a change in the version number.</li>
+      <li>implementations:
+        Implementation details for various environments
+        (eg, Java implementation class).</li>
+    </ul>
+
+    <h3>2. Properties</h3>
+
+    <p>Reference lists can carry information other than codes and descriptions.
+      Each reference item can have an arbitrary number of name/value pairs called properties.
+      The codes and descriptions of a reference items
+      are simply two mandatory properties of a reference list.</p>
+
+    <p>The definition of a property belongs to the list as a whole,
+      and each item has a value for the property.
+      The existence of a property name/value on a list item
+      serves to declare the existence of that property for the entire list.
+      Thus, if a given property exists in a reference list,
+      then there SHOULD BE a value for that property on each item in the list.
+      If a property is not defined on an item,
+      that property has a default value for that item
+      according to implementation specific semantics (eg, null, false).
+      The data type of a given property should be the same for each item in the list.</p>
+
+    <p>A property name can appear multiple times in a reference item with different values.</p>
+
+    <p>Property names should be camel-case identifiers, starting with a lower case letter.</p>
+
+    <h3>Aliases</h3>
+
+    <p>We often need to find a reference item given its code
+      (eg, on submission of an HTTP form, or when retrieving data from persistent store).
+      This is always possible for a valid code since codes are unique across the reference list.
+      Aliases provide the ability to tag each reference item with alternate values
+      by which they can be found.</p>
+
+    <p>Each reference item can have zero or more aliases.
+      Aliases must conform to the same restriction as code,
+      viz that an alias MUST BE unique across the codes and aliases of a reference list.
+      That is, given a string value,
+      it must be possible to find zero or one items in a reference list
+      that have that value as its code or an alias.</p>
+
+  </body>
+</html>

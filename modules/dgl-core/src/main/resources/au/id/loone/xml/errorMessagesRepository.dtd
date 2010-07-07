@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!---
+<p>Top level element. Simply a container for zero or more messages.</p>
+
+<h3>Attributes</h3>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tr>
+    <td align="left" valign="top"><code>contextKeys</code></td>
+    <td align="left" valign="top">A comma separated list of keys to be listed to the user.
+      Provides a list of context keys that are common to all messages in this reporitory.
+      This is the same as adding this context key to every <code>messageText</code>
+      element in this file.</td>
+  </tr>
+</table>
+  -->
+<!ELEMENT errorMessagesRepository (message)*>
+<!ATTLIST messageText
+    contextKeys CDATA #IMPLIED
+  >
+
+<!---
+<p>Definition of a single message.</p>
+
+<p>A message consists of the message key,
+the message text and
+some number of associated faults.</p>
+
+<h3>Attributes</h3>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tr>
+    <td align="left" valign="top"><code>id</code>
+    <td align="left" valign="top">The message key that this element applies to.</td>
+  </tr>
+</table>
+  -->
+<!ELEMENT message (messageText*, fault*)>
+<!ATTLIST message
+    id ID #REQUIRED
+  >
+
+<!---
+<p>The message text associated with the message id.</p>
+
+<p>Strings between braces
+(ie, {blah})
+are substituted from the fragments
+provided when the exception is created.</p>
+
+<h3>Attributes</h3>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tr>
+    <td align="left" valign="top"><code>audience</code></td>
+    <td align="left" valign="top">The intended audience for this message text.
+      Possible values:
+      <ul>
+        <li><code>BOTH</code>:
+          Indicates that the text is suitable for display to both
+          operations staff and end users.</li>
+        <li><code>OPERATIONS</code>:
+          Indicates that the message text is intended for
+          operations staff only.</li>
+        <li><code>USER</code>:
+          Indicates that this message text is intended for end users only.
+          That is, it is suitable for display on the error page,
+          and provides some meaningful and useful guidance on what the end user
+          might to in response to the error.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top"><code>contextKeys</code></td>
+    <td align="left" valign="top">A comma separated list of keys to be listed to the user.
+      If there is a value in the properties map for these keys,
+      they will be presented in a table to the user
+      underneath the message.
+      If there is no value for a given context key then that context key name is not displayed.
+      If there are no values for any of the named keys then the table is not displayed.
+      Context keys that are to apply to every message in the repository
+      may be specified once in the <code>errorMessagesRepository</code> element.</td>
+  </tr>
+</table>
+  -->
+<!ELEMENT messageText (#PCDATA)>
+<!ATTLIST messageText
+    audience (BOTH|OPERATIONS|USER) "BOTH"
+    contextKeys CDATA #IMPLIED
+  >
+
+<!---
+<p>One possible fault associated with the message key.</p>
+
+<p>Each instance of this element identifies a possible cause of the error,
+with suggested actions to correct the fault.</p>
+
+<h3>Attributes</h3>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tr>
+    <td align="left" valign="top"><code>service</code></td>
+    <td align="left" valign="top">The name of the service for which this fault applies.
+      If this attribute is not specified,
+      then the fault is taken to apply to all services.</td>
+  </tr>
+</table>
+  -->
+<!ELEMENT fault (cause, action)>
+<!ATTLIST fault
+    service CDATA #IMPLIED
+  >
+
+<!---
+<p>An explaination of the possible cause of the fault.</p>
+
+<p>Strings between braces
+(ie, {blah})
+are substituted from the fragments provided when the exception is created.</p>
+  -->
+<!ELEMENT cause (#PCDATA)>
+
+<!---
+<p>The suggested action to fix the fault if it was caused by the associated cause element.</p>
+
+<p>Strings between braces
+(ie, {blah})
+are substituted from the fragments provided when the exception is created.</p>
+  -->
+<!ELEMENT action (#PCDATA)>

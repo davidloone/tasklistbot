@@ -1,0 +1,9 @@
+<module>
+
+  <public path="public"/>
+
+  <source path="client"/>
+
+  <super-source path="gwtemul"/>
+
+</module>

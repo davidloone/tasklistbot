@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2009-2010 David G Loone. All Rights Reserved.
+  -->
+
+<project basedir="." default="all" name="build-proj" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- The project base (top level) directory. -->
+  <property name="project-base" value="${basedir}"/>
+
+  <loadproperties srcFile="${project-base}/build-proj.properties"/>
+
+  <property name="project-name" value=""/>
+  <property name="project-desc" value=""/>
+  <property name="project-version" value=""/>
+  <property name="manifest-implementation-vendor" value=""/>
+  <property name="build-version" value=""/>
+  <property name="buildsupport-base" value="${project-base}/buildsupport"/>
+  <property name="ivy-base" value="${buildsupport-base}/ivy"/>
+
+  <property name="build-work" value="${project-base}/build-work"/>
+  <property name="proj-lib-dir" value="${project-base}/build-work/${project-name}_war/WEB-INF/lib"/>
+
+  <property name="dgl-core-mod" value="modules/dgl-core"/>
+  <property name="tasklistbot-mod" value="modules/tasklistbot"/>
+
+  <property name="build-out" value="${project-base}/out"/>
+
+  <import file="${buildsupport-base}/ivy/build-ivy.xml"/>
+
+  <!--
+    - Path for external Ant targets.
+    -->
+  <path id="ant-classpath">
+    <fileset dir="${project-base}/buildsupport/lib-ant" includes="*.jar"/>
+    <fileset dir="${ivy-lib-dir}/ant/jar" includes="*.jar"/>
+  </path>
+
+  <!--
+    - Load the svnant extension.
+    -->
+  <typedef
+      resource="org/tigris/subversion/svnant/svnantlib.xml"
+    >
+    <classpath>
+      <fileset dir="${project-base}/buildsupport/lib-ant" includes="*.jar"/>
+    </classpath>
+  </typedef>
+  <svn>
+    <wcVersion path="${tasklistbot-mod}" prefix="svn."/>
+  </svn>
+  <property name="svn.committed.max" value=""/>
+  <property name="svn.revision" value="${svn.committed.max}"/>
+  <echo message="svn.revision (proj) = ${svn.revision}"/>
+
+
+  <!--
+    - Set this to change the ivy conf for this build (eg, to "prod"). The default value given here
+    - is suitable for development builds.
+    -->
+  <property name="ivy-conf" value="prod"/>
+
+  <!--
+    - Libraries to use for compilation.
+    -->
+  <path id="javac-lib-classpath">
+    <fileset dir="${project-base}/lib" includes="*.jar"/>
+    <fileset dir="${ivy-lib-dir}/${ivy-conf}/jar" includes="*.jar"/>
+    <fileset dir="${ivy-lib-dir}/${ivy-conf}/bundle" includes="*.jar"/>
+    <fileset dir="${ivy-lib-dir}/ref/jar" includes="*.jar"/>
+    <!--<fileset dir="${build-lib-dir}" includes="*.jar"/>-->
+  </path>
+
+
+  <target name="all" depends="retrieve,war-redo"/>
+
+  <!-- Timestamp for the build. Goes into the resulting artifacts. -->
+  <tstamp>
+    <format property="build-timestamp" pattern="yyyy-MM-dd'T'HH:mm:ssZ"/>
+  </tstamp>
+
+  <target name="clean">
+    <delete failonerror="false" includeemptydirs="true">
+      <fileset dir="${build-work}" erroronmissingdir="false" includes="**/*"/>
+    </delete>
+    <antcall inheritAll="false" inheritRefs="false" target="call-module">
+      <param name="module" value="dgl-core"/>
+      <param name="target" value="clean"/>
+    </antcall>
+    <antcall inheritAll="false" inheritRefs="false" target="call-module">
+      <param name="module" value="tasklistbot"/>
+      <param name="target" value="clean"/>
+    </antcall>
+  </target>
+
+  <target depends="clean,war" name="war-redo"/>
+
+  <target depends="retrieve,war-tasklistbot" name="war"/>
+
+  <target depends="retrieve" name="war-tasklistbot">
+    <mkdir dir="${build-work}"/>
+    <mkdir dir="${build-work}/${project-name}_war"/>
+    <mkdir dir="${build-work}/${project-name}_war/WEB-INF"/>
+    <mkdir dir="${build-work}/${project-name}_war/WEB-INF/lib"/>
+    <copy todir="${build-work}/${project-name}_war">
+      <fileset dir="modules/tasklistbot/src/main/webapp" includes="**/*.*"/>
+    </copy>
+    <mkdir dir="${build-work}/${project-name}_war/WEB-INF/lib"/>
+
+    <!-- dgl-core -->
+    <antcall target="call-module">
+      <param name="module" value="dgl-core"/>
+      <param name="target" value="all"/>
+    </antcall>
+    <copy todir="${build-work}/${project-name}_war/WEB-INF/lib">
+      <fileset dir="${dgl-core-mod}/build-work/artifacts" includes="*.j6.jar"/>
+    </copy>
+
+    <!-- tasklistbot -->
+    <antcall target="call-module">
+      <param name="module" value="tasklistbot"/>
+      <param name="target" value="all"/>
+    </antcall>
+    <copy todir="${build-work}/${project-name}_war/WEB-INF/lib">
+      <fileset dir="${tasklistbot-mod}/build-work/artifacts" includes="*.j6.jar"/>
+    </copy>
+    <copy todir="${build-work}/${project-name}_war">
+      <fileset dir="${tasklistbot-mod}/build-work/tasklistbot_war" includes="**/*.*"/>
+    </copy>
+    <copy todir="${build-work}/${project-name}_war/WEB-INF/lib">
+      <fileset dir="ivy-lib/dev/jar" includes="*.jar"/>
+      <fileset dir="ivy-lib/dev/bundle" includes="*.jar"/>
+      <fileset dir="lib" includes="*.jar"/>
+    </copy>
+    <war destfile="${build-work}/${project-name}.war">
+      <fileset dir="${build-work}/${project-name}_war"/>
+      <manifest>
+        <attribute name="Extension-Name" value="${project-name}"/>
+        <attribute name="Implementation-Vendor" value="${manifest-implementation-vendor}"/>
+        <attribute name="Implementation-Title" value="${project-desc}"/>
+        <attribute name="Implementation-Version" value="${project-version}"/>
+        <attribute name="Subversion-Revision-Number" value="${svn.revision}"/>
+        <attribute name="Build-Timestamp" value="${build-timestamp}"/>
+        <attribute name="Implementation-Target" value="1.5"/>
+      </manifest>
+    </war>
+  </target>
+
+  <!--
+    - Call a target on a module buildfile.
+    -->
+  <target name="call-module">
+    <ant antfile="modules/${module}/build.xml" inheritAll="false" inheritRefs="false">
+      <property name="build-lib-dir" value="${build-work}/${project-name}_war/WEB-INF/lib"/>
+      <property name="module-base" value="${project-base}/modules/${module}"/>
+      <property name="project-base" value="${project-base}"/>
+      <target name="${target}"/>
+    </ant>
+  </target>
+
+  <!--
+    - Build the javadoc reference artifact.
+    -->
+  <target
+      description="Build the javadoc reference artifact."
+      name="javadoc"
+    >
+    <delete dir="${build-work}/javadoc"/>
+    <javadoc
+        author="true"
+        destdir="${build-work}/javadoc"
+        use="true"
+        version="true"
+        windowtitle="${project-desc}"
+      >
+      <classpath>
+        <path refid="javac-lib-classpath"/>
+      </classpath>
+      <packageset dir="modules/dgl-core/src/main/java" includes="**"/>
+      <packageset dir="modules/tasklistbot/src/main/java" includes="**"/>
+<!--
+      <packageset dir="modules/tasklistbot/src/main/gwt" includes="**"/>
+-->
+      <link href="http://java.sun.com/j2se/1.5.0/docs/api"/>
+      <link href="http://www.opensymphony.com/quartz/api/"/>
+      <doctitle>${project-name} (${project-desc})</doctitle>
+      <bottom>${javadoc-bottom}</bottom>
+      <tag name="doco" scope="all" description="Documentation:"/>
+      <tag name="todo" scope="all" description="To do:"/>
+      <group title="Cloud Locker Packages" packages="au.id.loone.apps.tasklistbot.*"/>
+    </javadoc>
+  </target>
+
+  <property name="appengine.sdk.dir" location="${project-base}/external/appengine-java-sdk"/>
+  <property name="appengine.tools.classpath" location="${appengine.sdk.dir}/lib/appengine-tools-api.jar"/>
+
+  <taskdef
+      name="enhance"
+      classpath="${appengine.tools.classpath}"
+      classname="com.google.appengine.tools.enhancer.EnhancerTask"
+    />
+
+  <target
+      name="appengine.enhance"
+      description="Perform JDO enhancement on compiled data classes."
+    >
+    <enhance failonerror="true">
+      <classpath>
+        <pathelement path="${appengine.tools.classpath}"/>
+        <pathelement path="${project-base}/out/artifacts/tasklistbot_war/WEB-INF/classes"/>
+        <fileset dir="${project-base}/lib" includes="*.jar"/>
+        <fileset dir="${project-base}/ivy-lib/dev/jar" includes="*.jar"/>
+        <fileset dir="${project-base}/ivy-lib/ref/jar" includes="*.jar"/>
+        <fileset dir="${project-base}/out/artifacts/tasklistbot_war/WEB-INF/lib" includes="*.jar"/>
+      </classpath>
+      <fileset dir="${project-base}/out/artifacts/tasklistbot_war/WEB-INF/classes" includes="**/*.class"/>
+    </enhance>
+  </target>
+
+  <!-- Deploy to the sandbox environment. -->
+  <target name="deploy-sandbox">
+    <exec executable="ssh">
+      <arg value="looney@home1.loone.id.au"/>
+      <arg value="rm"/>
+      <arg value="-rf"/>
+      <arg value="tasklistbot/tmp/tasklistbot.war"/>
+    </exec>
+    <exec executable="scp">
+      <arg value="-p"/>
+      <arg value="configs/tasklistbot-sb.properties"/>
+      <arg value="looney@home1.loone.id.au:tasklistbot/tmp/tasklistbot-sb.properties"/>
+    </exec>
+    <exec executable="scp">
+      <arg value="-p"/>
+      <arg value="${build-out}/artifacts/tasklistbot.war"/>
+      <arg value="looney@home1.loone.id.au:tasklistbot/tmp/tasklistbot.war"/>
+    </exec>
+    <exec executable="ssh">
+      <arg value="looney@home1.loone.id.au"/>
+      <arg value="tasklistbot/tomcat/bin/shutdown.sh"/>
+    </exec>
+    <exec executable="sleep">
+      <arg value="10"/>
+    </exec>
+    <exec executable="ssh">
+      <arg value="looney@home1.loone.id.au"/>
+      <arg value="rm"/>
+      <arg value="-rf"/>
+      <arg value="tasklistbot/tomcat/webapps/ROOT.war"/>
+      <arg value="tasklistbot/tomcat/webapps/ROOT"/>
+      <arg value="tasklistbot/tomcat/work/Catalina/localhost/ROOT"/>
+    </exec>
+    <exec executable="ssh">
+      <arg value="looney@home1.loone.id.au"/>
+      <arg value="cp"/>
+      <arg value="-p"/>
+      <arg value="tasklistbot/tmp/tasklistbot.war"/>
+      <arg value="tasklistbot/tomcat/webapps/ROOT.war"/>
+    </exec>
+    <exec executable="ssh">
+      <arg value="looney@home1.loone.id.au"/>
+      <arg value="cp"/>
+      <arg value="-p"/>
+      <arg value="tasklistbot/tmp/tasklistbot-sb.properties"/>
+      <arg value="tasklistbot/tomcat/conf/tasklistbot.properties"/>
+    </exec>
+    <exec executable="ssh">
+      <arg value="looney@home1.loone.id.au"/>
+      <arg value="tasklistbot/tomcat/bin/startup.sh"/>
+    </exec>
+  </target>
+
+</project>
