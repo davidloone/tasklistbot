@@ -133,6 +133,13 @@ public final class TaskListBot
     }
 
     /**
+     * Document change events.
+     *
+     * <p>We filter on the special character sequence that we want to convert to a task tracker,
+     *      but only respond to it when it occurs at the beginning of an "li" line.
+     *      This kind of works,
+     *      but we won't see changes to indenting structure, etc,
+     *      nor deletion of task trackers.</p>
      */
     @Capability(
             contexts = {
@@ -145,19 +152,7 @@ public final class TaskListBot
             final DocumentChangedEvent event
     )
     {
-        LOG.trace("onDocumentChanged(" + TraceUtil.formatObj(event) + ")");
-        LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(event, "event.modifiedBy"));
-        LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(event, "event.blip.content"));
-        LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(event, "event.blip.elements.size"));
         final Blip blip = event.getBlip();
-        for (final Integer offset : blip.getElements().keySet()) {
-            final Element el = blip.getElements().get(offset);
-            LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(offset, "offset"));
-            LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(el, "el.type"));
-            LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(el, "el.indent"));
-            LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(el, "el.text"));
-            LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(el, "el.lineType"));
-        }
 
         // Search for, and replace, the target string.
         int idx = blip.getContent().indexOf("[[]]", 0);
@@ -169,15 +164,17 @@ public final class TaskListBot
             if ((myElement != null) &&
                     DGLUtil.equals(myElement.getType(), ElementType.LINE) &&
                     DGLStringUtil.equals(((Line)myElement).getLineType(), "li")) {
+                // Create the task tracker gadget.
                 final Gadget gadget = new Gadget(CONFIG.getTaskTrackerGadgetUrl().toString());
                 gadget.getProperties().put("taskTrackerId", String.valueOf(DGLDateTimeUtil.now().getTime()));
                 gadget.getProperties().put("progress", String.valueOf(0));
                 gadget.getProperties().put("readonly", Boolean.FALSE.toString());
                 gadget.getProperties().put("version", String.valueOf(1));
+                // And replace.
                 blip.range(idx, idx + 4).replace(gadget);
             }
 
-            // Find the next one.
+            // Find the next instance of the target string.
             idx = blip.getContent().indexOf("[[]]", idx + 4);
             LOG.trace("onDocumentChanged: " + TraceUtil.formatObj(idx, "idx"));
         }
@@ -186,6 +183,7 @@ public final class TaskListBot
     }
 
     /**
+     * When user modifies (<i>ie</i> checks or unchecks) a task tracker.
      */
     @Override
     public void onGadgetStateChanged(
@@ -204,40 +202,46 @@ public final class TaskListBot
     }
 
     /**
+     * Performs an idempotent check of all the task trackers in the document.
+     *
+     * @param blip
+     *      The blip being processed.
      */
     private void checkTrackers(
             final Blip blip
     )
     {
-            final List<TrackerSpec> trackers = new LinkedList<TrackerSpec>();
-            int indent = 0;
-            for (final Integer offset : blip.getElements().keySet()) {
-                final Element el = blip.getElements().get(offset);
-                LOG.trace("checkTrackers: --------------------------------------");
-                LOG.trace("checkTrackers: " + TraceUtil.formatObj(offset, "offset"));
-                LOG.trace("checkTrackers: " + TraceUtil.formatObj(el, "el.class.name"));
-                LOG.trace("checkTrackers: " + TraceUtil.formatObj(el, "el.type"));
-                LOG.trace("checkTrackers: " + TraceUtil.formatObj(el, "el.indent"));
-                LOG.trace("checkTrackers: " + TraceUtil.formatObj(el, "el.text"));
-                LOG.trace("checkTrackers: " + TraceUtil.formatObj(el, "el.lineType"));
+        // Iterate over the elements in the document. The line elements give us an indent level, which we
+        // remember for to attach to a gadget that we find in that line. The result is a list of gadget/indent
+        // pairs, which is a kind of tree.
+        final List<TrackerSpec> trackers = new LinkedList<TrackerSpec>();
+        int indent = 0;
+        for (final Integer offset : blip.getElements().keySet()) {
+            final Element el = blip.getElements().get(offset);
 
-                if (el instanceof Line) {
-                    LOG.trace("checkTrackers: line");
-                    final Line lineEl = (Line)el;
-                    LOG.trace("checkTrackers: line 1");
-                    indent = DGLStringUtil.isNullOrEmpty(lineEl.getIndent()) ? 0 : Integer.valueOf(lineEl.getIndent());
-                    LOG.trace("checkTrackers: line 2");
-                }
-                else if (el instanceof Gadget) {
-                    LOG.trace("checkTrackers: gadget");
-                    trackers.add(new TrackerSpec(indent, (Gadget)el));
-                }
+            if (el instanceof Line) {
+                final Line lineEl = (Line)el;
+                indent = DGLStringUtil.isNullOrEmpty(lineEl.getIndent()) ? 0 : Integer.valueOf(lineEl.getIndent());
             }
+            else if (el instanceof Gadget) {
+                trackers.add(new TrackerSpec(indent, (Gadget)el));
+            }
+        }
 
-            processTrackersTree(blip, trackers);
+        // Process the tree.
+        processTrackersTree(blip, trackers);
     }
 
     /**
+     * Recursively process a tree of gadgets,
+     * and return the completeness value.
+     *
+     * @param blip
+     *      The blip being processed.
+     * @param trackers
+     *      The list of gadget/indent pairs.
+     * @return
+     *      The progress level of the list (as a percentage).
      */
     private int processTrackersTree(
             final Blip blip,
@@ -258,12 +262,19 @@ public final class TaskListBot
             result = trackers.get(0).getProgress();
         }
         else {
+            // Process the trackers in the list, keeping enough data (ie cumulative total and number of nodes)
+            // to calculate the average at the end.
             int idx = 0;
             int total = 0;
             int numNodes = 0;
             while (idx < trackers.size()) {
                 LOG.trace("processTrackersTree: " + TraceUtil.formatObj(idx, "idx"));
                 final int indent = trackers.get(idx).getIndent();
+                // Make a list of all the children (in fact, all the descendants) of this tracker gadget. We
+                // define this as all the gadgets in the document up until the indent gets back to the current
+                // indent. There are various edge cases that might be a bit dodgy (eg if the indent of the next
+                // gadget is two or more than the current indent), but they are sufficiently ill-defined that
+                // the definition contained herein will probably suffice.
                 final List<TrackerSpec> children = new LinkedList<TrackerSpec>();
                 if (idx < trackers.size() - 1) {
                     int childIdx = idx + 1;
@@ -275,16 +286,17 @@ public final class TaskListBot
                     }
                 }
                 if (children.size() == 0) {
+                    // Leaf node, so the progress level can be read from the tracker itself.
                     total += trackers.get(idx).getProgress();
                     numNodes++;
 
-                    // We have a leaf node, it shouldn't be readonly. It might be though if things have been
-                    // rearranged.
+                    // A leaf node should be readonly. It might be though if things have been rearranged.
                     if (trackers.get(idx).getReadonly()) {
                         setTrackerState(blip, trackers.get(idx).getGadget(), false, trackers.get(idx).getProgress());
                     }
                 }
                 else {
+                    // This tracker has children. Process them to get the completed value.
                     final int childrenProgress = processTrackersTree(blip, children);
 
                     setTrackerState(blip, trackers.get(idx).getGadget(), true, childrenProgress);
@@ -295,6 +307,8 @@ public final class TaskListBot
 
                 idx += (children.size() + 1);
             }
+
+            // Calculate the average to return.
             result = total / numNodes;
         }
 
@@ -303,6 +317,14 @@ public final class TaskListBot
     }
 
     /**
+     * @param blip
+     *      The blip being processed.
+     * @param tracker
+     *      The task tracker gadget to set the state of.
+     * @param readonly
+     *      Whether the tracker gadget should be set as readonly.
+     * @param progress
+     *      The progress value to assign to the tracker gadget (as a percentage).
      */
     private void setTrackerState(
             final Blip blip,
@@ -311,6 +333,8 @@ public final class TaskListBot
             final int progress
     )
     {
+        // We use the hack of replacing the gadget if its state has to be changed. Only replace the gadget if
+        // the state has actually changed.
         final boolean oldReadonly = DGLStringUtil.isNullOrEmpty(tracker.getProperty("readonly")) ? false :
                 Boolean.valueOf(tracker.getProperty("readonly"));
         final int oldProgress = DGLStringUtil.isNullOrEmpty(tracker.getProperty("progress")) ? 0 :
@@ -331,6 +355,7 @@ public final class TaskListBot
     }
 
     /**
+     * A gadget/indent pair.
      */
     private static class TrackerSpec
     {
