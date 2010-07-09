@@ -35,6 +35,7 @@
     <orderEntry type="library" scope="PROVIDED" name="lib-ref" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" scope="TEST" name="lib-test" level="project" />
+    <orderEntry type="module" module-name="config-prod" />
   </component>
 </module>
 
