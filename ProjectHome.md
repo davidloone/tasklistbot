@@ -1,0 +1,1 @@
+A Google Wave task tracking robot. Each task is managed by a task tracker gadget in the wave. Relationships between tasks is managed by the bullet structure in the wave.
